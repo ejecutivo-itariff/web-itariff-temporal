@@ -1,4 +1,4 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))n(o);new MutationObserver(o=>{for(const a of o)if(a.type==="childList")for(const s of a.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&n(s)}).observe(document,{childList:!0,subtree:!0});function r(o){const a={};return o.integrity&&(a.integrity=o.integrity),o.referrerPolicy&&(a.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?a.credentials="include":o.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function n(o){if(o.ep)return;o.ep=!0;const a=r(o);fetch(o.href,a)}})();const A=""+new URL("wallpaper_itariff-k8GysL0I.png",import.meta.url).href,k=""+new URL("administracion-vYPTVi05.png",import.meta.url).href,E=""+new URL("auditoria-C_GTYAOt.png",import.meta.url).href,x=""+new URL("auditorias-B3SJ__9P.png",import.meta.url).href,S=""+new URL("capacitacion-CsrjnlC6.png",import.meta.url).href,C=""+new URL("coaching-ujdCFTqG.png",import.meta.url).href,L=""+new URL("asesoria-Djfo5-DU.png",import.meta.url).href,T=""+new URL("propuestavalor-B9E15WG1.png",import.meta.url).href,R=""+new URL("background-Cbs3T__1.jpg",import.meta.url).href,M=""+new URL("logoBlue-dssebgsH.png",import.meta.url).href,g=""+new URL("anexo24-v7jDiE3Y.png",import.meta.url).href,y=""+new URL("anexo30-pCUUV4Di.png",import.meta.url).href,h=""+new URL("cumplimientoIcon-DC0OwPRt.png",import.meta.url).href,N=""+new URL("logo-DRPNcPwc.png",import.meta.url).href,O=""+new URL("HeroVideo-DKrM675a.mp4",import.meta.url).href,v=[{title:"COACHING",description:"Se obtiene el conocimiento para la gestión de su departamento de comercio exterior."},{title:"PROPUESTA DE VALOR",description:"En I TARIFF estamos comprometidos a llevar las mejores prácticas del cumplimiento aduanero mexicano a tu empresa. Contáctanos y nuestro equipo de expertos te apoyará en el proceso."},{title:"ADMINISTRACIÓN DE ANEXO 24.",description:"Se administra, audita y controla la obligación de demostrar los retornos de las mercancías importadas."},{title:"ADMINISTRACIÓN DE ANEXO 30.",description:"Se administra y supervisa la obligación de demostrar el pago del IVA de las importaciones temporales a través de sus retornos."}],D=`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))i(s);new MutationObserver(s=>{for(const a of s)if(a.type==="childList")for(const o of a.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&i(o)}).observe(document,{childList:!0,subtree:!0});function r(s){const a={};return s.integrity&&(a.integrity=s.integrity),s.referrerPolicy&&(a.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?a.credentials="include":s.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function i(s){if(s.ep)return;s.ep=!0;const a=r(s);fetch(s.href,a)}})();const A="/itariff/assets/wallpaper_itariff-k8GysL0I.png",k="/itariff/assets/administracion-vYPTVi05.png",E="/itariff/assets/auditoria-C_GTYAOt.png",x="/itariff/assets/auditorias-B3SJ__9P.png",S="/itariff/assets/capacitacion-CsrjnlC6.png",C="/itariff/assets/coaching-ujdCFTqG.png",L="/itariff/assets/asesoria-Djfo5-DU.png",T="/itariff/assets/propuestavalor-B9E15WG1.png",M="/itariff/assets/background-Cbs3T__1.jpg",N="/itariff/assets/logoBlue-dssebgsH.png",g="/itariff/assets/anexo24-v7jDiE3Y.png",y="/itariff/assets/anexo30-pCUUV4Di.png",b="/itariff/assets/cumplimientoIcon-DC0OwPRt.png",R="/itariff/assets/logo-DRPNcPwc.png",O="/itariff/assets/HeroVideo-DKrM675a.mp4",v=[{title:"COACHING",description:"Se obtiene el conocimiento para la gestión de su departamento de comercio exterior."},{title:"PROPUESTA DE VALOR",description:"En I TARIFF estamos comprometidos a llevar las mejores prácticas del cumplimiento aduanero mexicano a tu empresa. Contáctanos y nuestro equipo de expertos te apoyará en el proceso."},{title:"ADMINISTRACIÓN DE ANEXO 24.",description:"Se administra, audita y controla la obligación de demostrar los retornos de las mercancías importadas."},{title:"ADMINISTRACIÓN DE ANEXO 30.",description:"Se administra y supervisa la obligación de demostrar el pago del IVA de las importaciones temporales a través de sus retornos."}],D=`
   <section id="inicio" class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
     
     <div class="absolute inset-0 z-0">
@@ -19,7 +19,7 @@
     
     <div id="hero-content" class="relative z-10 text-center text-white p-4">
         
-        <img src="${N}" alt="ITARIFF Logo" class="w-64 h-auto mx-auto mb-6 drop-shadow-lg"/> 
+        <img src="${R}" alt="ITARIFF Logo" class="w-64 h-auto mx-auto mb-6 drop-shadow-lg"/> 
         
         <div class="h-10 mb-2 flex items-center justify-center">
             <h1 id="rotating-text" class="text-2xl md:text-3xl font-semibold drop-shadow-md opacity-0 transition-opacity duration-700 ease-out">
@@ -129,7 +129,7 @@
     
     ${j}
   </section>
-`,U=`
+`,$=`
   <div class="flex justify-center items-start lg:h-full lg:py-12">
     <div class="scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out bg-white p-8 rounded-xl shadow-2xl max-w-md w-full border border-gray-200"> 
       
@@ -169,7 +169,7 @@
       </ul>
     </div>
   </div>
-`,$=`
+`,B=`
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 h-full py-12 w-full mx-auto">
     
     <div class="scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out service-card cursor-pointer p-6 shadow-xl rounded-lg bg-white hover:shadow-2xl border border-gray-200 text-center flex flex-col justify-between items-center" data-service-id="anexo24">
@@ -197,7 +197,7 @@
     <div class="md:col-span-2 flex justify-center mt-4"> 
         <div class="scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out service-card cursor-pointer p-6 shadow-xl rounded-lg bg-white hover:shadow-2xl border border-gray-200 text-center flex flex-col justify-between items-center" data-service-id="cumplimiento"> 
             <div>
-                <img src="${h}" alt="Gestión Integral" class="w-16 h-16 object-cover rounded-full mx-auto mb-4"/>
+                <img src="${b}" alt="Gestión Integral" class="w-16 h-16 object-cover rounded-full mx-auto mb-4"/>
                 <h3 class="text-xl font-bold text-sky-900 mb-2">CUMPLIMIENTO</h3>
                 <p class="text-gray-600 text-base mb-4">Auditorías, capacitación, coaching y trámites ante la autoridad aduanera.</p>
             </div>
@@ -208,11 +208,11 @@
     </div>
 
   </div>
-`,B=`
+`,V=`
   <section id="servicios" class="min-h-screen relative py-12 border-b border-gray-200 flex items-center overflow-hidden">
     
     <div class="absolute inset-0 z-0 bg-cover bg-center" 
-         style="background-image: url(${R});">
+         style="background-image: url(${M});">
       <div class="absolute inset-0 bg-sky-900 opacity-80"></div> 
     </div>
 
@@ -221,17 +221,17 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         
         <div class="flex justify-center">
-          ${U}
+          ${$}
         </div>
         
         <div class="lg:pl-4 flex items-center">
-            ${$}
+            ${B}
         </div>
         
       </div>
     </div>
   </section>
-`,V=`
+`,q=`
     <div 
         id="service-modal" 
         class="fixed inset-0 flex items-center justify-center z-[100] hidden" 
@@ -248,7 +248,7 @@
             </div>
         </div>
     </div>
-`,q=`
+`,H=`
   <section id="contacto" class="min-h-screen py-20">
     <div class="container mx-auto px-4">
       <h2 class="text-5xl font-bold text-center text-gray-800 mb-12">CONTACTO</h2>
@@ -305,12 +305,12 @@
       </div>
     </div>
   </section>
-`,H=()=>`
+`,z=()=>`
   <header class="sticky top-0 z-50 bg-white shadow-lg">
     <nav class="container mx-auto p-7 flex justify-between items-center relative">
       
       <a href="#inicio" class="nav-link flex items-center py-1 hidden md:block absolute left-4 top-1/2 transform -translate-y-1/2">
-        <img src="${M}" alt="ITARIFF Logo" class="h-19 w-auto">
+        <img src="${N}" alt="ITARIFF Logo" class="h-19 w-auto">
       </a>
       
       <div class="flex space-x-6 w-full justify-center md:w-auto md:ml-auto md:mr-4 md:relative">
@@ -321,7 +321,7 @@
       </div>
     </nav>
   </header>
-`,z=()=>`
+`,U=()=>`
   <footer class="bg-gray-900 text-white p-6 text-center">
     <p>© Copyright 2020  I Tarif</p>
   </footer>
@@ -332,7 +332,7 @@
                 <p class="text-base font-semibold text-gray-800 uppercase text-center">${t}</p>
             </div>
         </div>
-    `}function F(){const e=document.getElementById("contacto-form"),t=document.getElementById("form-status"),r=document.getElementById("submit-btn");e&&e.addEventListener("submit",async n=>{n.preventDefault();const o=new FormData(e);t.classList.remove("hidden"),t.textContent="Enviando...",t.classList.remove("text-green-600","text-red-600"),t.classList.add("text-sky-900"),r.disabled=!0;try{const a=await fetch(e.action,{method:"POST",body:o}),s=await a.json();a.ok&&s.success?(t.textContent="¡Mensaje enviado con éxito! Recibirás una respuesta pronto.",t.classList.remove("text-sky-900","text-red-600"),t.classList.add("text-green-600"),e.reset()):(t.textContent=s.message||"Error al enviar el mensaje.",t.classList.remove("text-sky-900","text-green-600"),t.classList.add("text-red-600"))}catch(a){console.error("Error de conexión:",a),t.textContent="Error de conexión. Inténtalo más tarde.",t.classList.remove("text-sky-900","text-green-600"),t.classList.add("text-red-600")}finally{r.disabled=!1}})}function X(){const e=document.getElementById("horizontal-carousel"),t=document.getElementById("prev-btn"),r=document.getElementById("next-btn");if(!e)return;const n=Array.from(e.querySelectorAll(".carousel-item")),o=n.length,a=3;for(let i=0;i<a;i++){const m=n[o-a+i];e.prepend(m.cloneNode(!0))}for(let i=0;i<a;i++)e.appendChild(n[i].cloneNode(!0));let s=a;function l(){const i=e.querySelector(".carousel-item");return i?i.clientWidth:e.clientWidth/3}const c=l();e.style.transform=`translateX(${-s*c}px)`;function u(){const i=l();e.style.transition="transform 0.5s ease-in-out";const m=-s*i;e.style.transform=`translateX(${m}px)`,e.addEventListener("transitionend",function I(w){if(w.propertyName!=="transform")return;const f=l();s>=o+a?(s=a,e.style.transition="none",e.style.transform=`translateX(${-s*f}px)`):s<a&&(s=o+a-1,e.style.transition="none",e.style.transform=`translateX(${-s*f}px)`),e.removeEventListener("transitionend",I)},{once:!0})}function p(){s++,u()}function b(){s--,u()}r.addEventListener("click",p),t.addEventListener("click",b),setInterval(p,4e3),window.addEventListener("resize",()=>{const i=l();e.style.transition="none",e.style.transform=`translateX(${-s*i}px)`})}function G(){const e=new IntersectionObserver((t,r)=>{t.forEach(n=>{n.isIntersecting&&n.target.classList.remove("opacity-0","translate-y-12")})},{threshold:.15,rootMargin:"0px 0px -10% 0px"});document.querySelectorAll(".scroll-reveal").forEach(t=>{e.observe(t)})}function W(){const e=document.getElementById("service-modal"),t=document.getElementById("modal-content-wrapper"),r=document.getElementById("close-modal-btn");if(!e||!r)return;const n=()=>{e.classList.add("hidden"),t.classList.remove("scale-100","opacity-100"),t.classList.add("scale-90","opacity-0"),document.body.style.overflow=""};r.addEventListener("click",n),e.addEventListener("click",o=>{o.target===e&&n()}),document.addEventListener("keydown",o=>{o.key==="Escape"&&!e.classList.contains("hidden")&&n()}),document.querySelectorAll(".service-card").forEach(o=>{o.addEventListener("click",()=>{const a=o.getAttribute("data-service-id"),s=Y(a);if(!s)return;let l="";s.subServices&&s.subServices.length>0&&(l=s.subServices.map(c=>`
+    `}function F(){const e=document.getElementById("contacto-form"),t=document.getElementById("form-status"),r=document.getElementById("submit-btn");e&&e.addEventListener("submit",async i=>{i.preventDefault();const s=new FormData(e);t.classList.remove("hidden"),t.textContent="Enviando...",t.classList.remove("text-green-600","text-red-600"),t.classList.add("text-sky-900"),r.disabled=!0;try{const a=await fetch(e.action,{method:"POST",body:s}),o=await a.json();a.ok&&o.success?(t.textContent="¡Mensaje enviado con éxito! Recibirás una respuesta pronto.",t.classList.remove("text-sky-900","text-red-600"),t.classList.add("text-green-600"),e.reset()):(t.textContent=o.message||"Error al enviar el mensaje.",t.classList.remove("text-sky-900","text-green-600"),t.classList.add("text-red-600"))}catch(a){console.error("Error de conexión:",a),t.textContent="Error de conexión. Inténtalo más tarde.",t.classList.remove("text-sky-900","text-green-600"),t.classList.add("text-red-600")}finally{r.disabled=!1}})}function X(){const e=document.getElementById("horizontal-carousel"),t=document.getElementById("prev-btn"),r=document.getElementById("next-btn");if(!e)return;const i=Array.from(e.querySelectorAll(".carousel-item")),s=i.length,a=3;for(let n=0;n<a;n++){const m=i[s-a+n];e.prepend(m.cloneNode(!0))}for(let n=0;n<a;n++)e.appendChild(i[n].cloneNode(!0));let o=a;function l(){const n=e.querySelector(".carousel-item");return n?n.clientWidth:e.clientWidth/3}const c=l();e.style.transform=`translateX(${-o*c}px)`;function u(){const n=l();e.style.transition="transform 0.5s ease-in-out";const m=-o*n;e.style.transform=`translateX(${m}px)`,e.addEventListener("transitionend",function I(w){if(w.propertyName!=="transform")return;const f=l();o>=s+a?(o=a,e.style.transition="none",e.style.transform=`translateX(${-o*f}px)`):o<a&&(o=s+a-1,e.style.transition="none",e.style.transform=`translateX(${-o*f}px)`),e.removeEventListener("transitionend",I)},{once:!0})}function p(){o++,u()}function h(){o--,u()}r.addEventListener("click",p),t.addEventListener("click",h),setInterval(p,4e3),window.addEventListener("resize",()=>{const n=l();e.style.transition="none",e.style.transform=`translateX(${-o*n}px)`})}function G(){const e=new IntersectionObserver((t,r)=>{t.forEach(i=>{i.isIntersecting&&i.target.classList.remove("opacity-0","translate-y-12")})},{threshold:.15,rootMargin:"0px 0px -10% 0px"});document.querySelectorAll(".scroll-reveal").forEach(t=>{e.observe(t)})}function W(){const e=document.getElementById("service-modal"),t=document.getElementById("modal-content-wrapper"),r=document.getElementById("close-modal-btn");if(!e||!r)return;const i=()=>{e.classList.add("hidden"),t.classList.remove("scale-100","opacity-100"),t.classList.add("scale-90","opacity-0"),document.body.style.overflow=""};r.addEventListener("click",i),e.addEventListener("click",s=>{s.target===e&&i()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&!e.classList.contains("hidden")&&i()}),document.querySelectorAll(".service-card").forEach(s=>{s.addEventListener("click",()=>{const a=s.getAttribute("data-service-id"),o=Y(a);if(!o)return;let l="";o.subServices&&o.subServices.length>0&&(l=o.subServices.map(c=>`
           <div class="flex items-start mb-6 p-4 border border-sky-100 bg-sky-50 shadow-sm">
             <img src="${c.icon}" alt="Icono de ${c.name}" class="w-12 h-12 object-cover mr-4 mt-1 flex-shrink-0"/>
             <div>
@@ -340,13 +340,13 @@
               <p class="text-gray-700 text-base">${c.description}</p> 
             </div>
           </div>
-        `).join("")),document.getElementById("modal-title").textContent=s.title,document.getElementById("modal-image").src=s.image,document.getElementById("modal-description").innerHTML=`<p class="text-gray-700 text-md">${s.description}</p>`,document.getElementById("modal-details").innerHTML=l,e.classList.remove("hidden"),document.body.style.overflow="hidden",setTimeout(()=>{t.classList.remove("scale-90","opacity-0"),t.classList.add("scale-100","opacity-100")},10)})})}function Y(e){return{anexo24:{title:"ANEXO 24",image:g,description:"El Anexo 24 es crucial para el cumplimiento de obligaciones de comercio exterior. Aseguramos el adecuado registro y control de saldos.",subServices:[{icon:k,name:"ADMINISTRACIÓN DE ANEXO 24",description:"Se administra, audita y controla la obligación de demostrar los retornos de las mercancías importadas temporalmente a través de herramientas que cumplen con los requisitos ante la autoridad para fines de comercio exterior."},{icon:E,name:"AUDITORÍA ESPECIFICA AL ANEXO 24",description:"Se verifica que cumpla con las disposiciones legales y técnicas adecuadas para la correcta captura de la información de los catálogos base, la información productiva, la información aduanera y su descarga."}]},anexo30:{title:"ANEXO 30",image:y,description:"El Anexo 30 aplica a empresas certificadas IVA & IEPS. Gestionamos la supervisión y demostración del pago de IVA de importaciones temporales.",subServices:[{icon:x,name:"ADMINISTRACIÓN DEL ANEXO 30 PARA EMPRESAS CERTIFICADAS IVA & IEPS",description:"Se administra y supervisa la obligación de demostrar el pago del IVA de las importaciones temporales a través de sus retornos."},{icon:L,name:"AUDITORÍA ESPECIFICA AL ANEXO 30 PARA EMPRESAS CERTIFICADAS IVA & IEPS",description:"Se verifica que cumpla con las disposiciones legales y entrega de la información ante la autoridad para el cabal cumplimiento de la Certificación de IVA & IEPS, y así, evitar su cancelación o suspensión."}],details:null},cumplimiento:{title:"CUMPLIMIENTO",image:h,description:"Ofrecemos un paquete completo de servicios para asegurar la operación aduanera. Incluye auditorías y capacitación.",subServices:[{icon:x,name:"AUDITORÍAS PREVENTIVAS DE COMERCIO EXTERIOR",description:"Análisis profundo de sus operaciones, clasificación arancelaria y expedientes de comercio exterior para mitigar riesgos."},{icon:S,name:"CAPACITACIÓN ESPECIALIZADA",description:"Cursos y talleres a la medida para formar a su equipo en temas críticos de la legislación aduanera mexicana."},{icon:C,name:"COACHING Y GESTIÓN DE TRÁMITES",description:"Soporte directo para la resolución de requerimientos y la gestión de trámites (padrones, certificaciones, etc.) ante el SAT/AGA."}],details:null}}[e]}function Z(){const e=document.getElementById("parallax-bg");if(!e)return;const t=parseFloat(e.getAttribute("data-parallax"))||.3;function r(){const o=window.scrollY*t;e.style.transform=`translate3d(0, ${o}px, 0)`}window.addEventListener("scroll",r),r()}function _(){const e=document.getElementById("rotating-text"),t=document.getElementById("rotating-description");if(!e||!t)return;let r=0;const n=4e3;function o(){const a=v[r];e.classList.add("opacity-0"),t.classList.add("opacity-0"),setTimeout(()=>{e.textContent=a.title,t.textContent=a.description,r=(r+1)%v.length,e.classList.remove("opacity-0"),t.classList.remove("opacity-0")},700)}o(),setInterval(o,n)}function J(){const e=document.querySelectorAll("section[id]"),t=document.querySelectorAll(".nav-link"),r=64;t.forEach(o=>{o.addEventListener("click",a=>{a.preventDefault();const s=o.getAttribute("href"),l=document.querySelector(s);l&&window.scrollTo({top:l.offsetTop-r+1,behavior:"smooth"})})});function n(){const o=window.scrollY;let a="";e.forEach(s=>{const l=s.offsetTop-r,c=l+s.offsetHeight;o>=l&&o<c&&(a=s.getAttribute("id"))}),t.forEach(s=>{s.querySelector("img")||(s.classList.remove("text-sky-900","font-bold","border-b-2","border-sky-900"),s.classList.add("text-gray-700","hover:text-sky-900"),s.getAttribute("href")===`#${a}`&&(s.classList.add("text-sky-900","font-bold","border-b-2","border-sky-900"),s.classList.remove("text-gray-700")))})}window.addEventListener("scroll",n),n()}const Q=64;function K(){const e=document.querySelector("#app");if(!e)return;e.innerHTML=`
-    ${H()}
+        `).join("")),document.getElementById("modal-title").textContent=o.title,document.getElementById("modal-image").src=o.image,document.getElementById("modal-description").innerHTML=`<p class="text-gray-700 text-md">${o.description}</p>`,document.getElementById("modal-details").innerHTML=l,e.classList.remove("hidden"),document.body.style.overflow="hidden",setTimeout(()=>{t.classList.remove("scale-90","opacity-0"),t.classList.add("scale-100","opacity-100")},10)})})}function Y(e){return{anexo24:{title:"ANEXO 24",image:g,description:"El Anexo 24 es crucial para el cumplimiento de obligaciones de comercio exterior. Aseguramos el adecuado registro y control de saldos.",subServices:[{icon:k,name:"ADMINISTRACIÓN DE ANEXO 24",description:"Se administra, audita y controla la obligación de demostrar los retornos de las mercancías importadas temporalmente a través de herramientas que cumplen con los requisitos ante la autoridad para fines de comercio exterior."},{icon:E,name:"AUDITORÍA ESPECIFICA AL ANEXO 24",description:"Se verifica que cumpla con las disposiciones legales y técnicas adecuadas para la correcta captura de la información de los catálogos base, la información productiva, la información aduanera y su descarga."}]},anexo30:{title:"ANEXO 30",image:y,description:"El Anexo 30 aplica a empresas certificadas IVA & IEPS. Gestionamos la supervisión y demostración del pago de IVA de importaciones temporales.",subServices:[{icon:x,name:"ADMINISTRACIÓN DEL ANEXO 30 PARA EMPRESAS CERTIFICADAS IVA & IEPS",description:"Se administra y supervisa la obligación de demostrar el pago del IVA de las importaciones temporales a través de sus retornos."},{icon:L,name:"AUDITORÍA ESPECIFICA AL ANEXO 30 PARA EMPRESAS CERTIFICADAS IVA & IEPS",description:"Se verifica que cumpla con las disposiciones legales y entrega de la información ante la autoridad para el cabal cumplimiento de la Certificación de IVA & IEPS, y así, evitar su cancelación o suspensión."}],details:null},cumplimiento:{title:"CUMPLIMIENTO",image:b,description:"Ofrecemos un paquete completo de servicios para asegurar la operación aduanera. Incluye auditorías y capacitación.",subServices:[{icon:x,name:"AUDITORÍAS PREVENTIVAS DE COMERCIO EXTERIOR",description:"Análisis profundo de sus operaciones, clasificación arancelaria y expedientes de comercio exterior para mitigar riesgos."},{icon:S,name:"CAPACITACIÓN ESPECIALIZADA",description:"Cursos y talleres a la medida para formar a su equipo en temas críticos de la legislación aduanera mexicana."},{icon:C,name:"COACHING Y GESTIÓN DE TRÁMITES",description:"Soporte directo para la resolución de requerimientos y la gestión de trámites (padrones, certificaciones, etc.) ante el SAT/AGA."}],details:null}}[e]}function Z(){const e=document.getElementById("parallax-bg");if(!e)return;const t=parseFloat(e.getAttribute("data-parallax"))||.3;function r(){const s=window.scrollY*t;e.style.transform=`translate3d(0, ${s}px, 0)`}window.addEventListener("scroll",r),r()}function _(){const e=document.getElementById("rotating-text"),t=document.getElementById("rotating-description");if(!e||!t)return;let r=0;const i=4e3;function s(){const a=v[r];e.classList.add("opacity-0"),t.classList.add("opacity-0"),setTimeout(()=>{e.textContent=a.title,t.textContent=a.description,r=(r+1)%v.length,e.classList.remove("opacity-0"),t.classList.remove("opacity-0")},700)}s(),setInterval(s,i)}function J(){const e=document.querySelectorAll("section[id]"),t=document.querySelectorAll(".nav-link"),r=64;t.forEach(s=>{s.addEventListener("click",a=>{a.preventDefault();const o=s.getAttribute("href"),l=document.querySelector(o);l&&window.scrollTo({top:l.offsetTop-r+1,behavior:"smooth"})})});function i(){const s=window.scrollY;let a="";e.forEach(o=>{const l=o.offsetTop-r,c=l+o.offsetHeight;s>=l&&s<c&&(a=o.getAttribute("id"))}),t.forEach(o=>{o.querySelector("img")||(o.classList.remove("text-sky-900","font-bold","border-b-2","border-sky-900"),o.classList.add("text-gray-700","hover:text-sky-900"),o.getAttribute("href")===`#${a}`&&(o.classList.add("text-sky-900","font-bold","border-b-2","border-sky-900"),o.classList.remove("text-gray-700")))})}window.addEventListener("scroll",i),i()}const Q=64;function K(){const e=document.querySelector("#app");if(!e)return;e.innerHTML=`
+    ${z()}
     <main>
       ${D}
       ${P}
-      ${B}
-      ${q}
+      ${V}
+      ${H}
     </main>
-    ${z()}
-    ${V}  `,X(),W(),J(),Z(),G(),_(),F();const t=document.getElementById("inicio");t&&window.scrollTo({top:t.offsetTop-Q+1,behavior:"smooth"})}document.addEventListener("DOMContentLoaded",K);
+    ${U()}
+    ${q}  `,X(),W(),J(),Z(),G(),_(),F();const t=document.getElementById("inicio");t&&window.scrollTo({top:t.offsetTop-Q+1,behavior:"smooth"})}document.addEventListener("DOMContentLoaded",K);
