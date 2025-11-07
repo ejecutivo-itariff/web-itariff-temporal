@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Clase base para el efecto Parallax */
+.parallax-bg {
+    background-attachment: fixed; /* Mantiene la imagen fija al viewport */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
