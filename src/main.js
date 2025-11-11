@@ -1,12 +1,11 @@
 
 import './styles/style.css';
-import WallpaperImage from './assets/wallpaper_itariff.png';
 import AdministracionIcon from './assets/administracion.png';
 import AuditoriaIcon from './assets/auditoria.png';
 import AuditoriasIcon from './assets/auditorias.png';
 import CapacitacionIcono from './assets/capacitacion.png';
 import CoachingIcono from './assets/coaching.png';
-import AsesoriaIcono from './assets/asesoria.png';
+import AsesoriaIcon from './assets/asesoria.png';
 import PropuestaValorImage from './assets/propuestavalor.png';
 import BackgroundServiceImage from './assets/background.jpg';
 import LogoBlue from './assets/logoBlue.png';
@@ -14,6 +13,15 @@ import Anexo24Icon from './assets/anexo24.png';
 import Anexo30Icon from './assets/anexo30.png';
 import CumplimientoIcon from './assets/cumplimientoIcon.png';
 import LogoWhite from './assets/logo.png';
+import BackgroundContactImage from './assets/background2.jpg';
+
+import AutorizacionesIcon from './assets/AutorizacionesIcon.png';
+import ImpuestosAduanerosIcon from './assets/ImpuestosAduanerosIcon.png';
+import ExpedientesPedimentosIcon from './assets/ExpedientesPedimentosIcon.png';
+import ValidacionSaldosIcon from './assets/ValidacionSaldosIcon.png';
+import ControlInventariosAnexo24Icon from './assets/ControlInventariosAnexo24Icon.png';
+import ProcessAnexo30Icon from './assets/ProcessAnexo30Icon.png';
+import LegalActivosFijosIcon from './assets/LegalActivosFijosIcon.png';
 
 import HeroVideo from './assets/HeroVideo.mp4';
 
@@ -24,7 +32,7 @@ const heroTexts = [
     },
     {
         title: 'PROPUESTA DE VALOR',
-        description: 'En I TARIFF estamos comprometidos a llevar las mejores prácticas del cumplimiento aduanero mexicano a tu empresa. Contáctanos y nuestro equipo de expertos te apoyará en el proceso.'
+        description: 'En I TARIFF estamos comprometidos a llevar las mejores prácticas del cumplimiento aduanero mexicano a tu empresa.'
     },
     {
         title: 'ADMINISTRACIÓN DE ANEXO 24.',
@@ -36,16 +44,53 @@ const heroTexts = [
     },
 ];
 
+const processSteps = [
+    { 
+        title: "Autorizaciones", 
+        iconPath: AutorizacionesIcon,
+        description: "Evitar la suspensión del padrón de importadores, de los beneficios de los programas IMMEX, PROSEC, Regla 8va, de los Tratados de Libre Comercio, la Certificación de IVA & IEPS y de Empresa Confiable (OEA)." 
+    },
+    { 
+        title: "Impuestos Aduaneros", 
+        iconPath: ImpuestosAduanerosIcon,
+        description: "Evitar el pago indebido por no conocer la aplicación total de las preferencias arancelarías de los Tratados de Libre Comercio, PROSEC y Regla 8va en las mercancías de importación." 
+    },
+    { 
+        title: "Expedientes de Pedimentos", 
+        iconPath: ExpedientesPedimentosIcon,
+        description: "Evitar el pago de multas por no contar con los documentos necesarios para demostrar la Importación, Exportación, Cambio de Régimen, Regularización, Transferencia, Destrucción o Donación de las mercancías en facultades de comprobación de las Autoridades fiscales u aduaneras." 
+    },
+    { 
+        title: "Validación de Saldos", 
+        iconPath: ValidacionSaldosIcon,
+        description: "Revisamos y validamos los saldos y reportes generados por su sistema contra la base de datos de la autoridad (SAT/AGA)." 
+    },
+    { 
+        title: "Control de inventarios Anexo 24", 
+        iconPath: ControlInventariosAnexo24Icon,
+        description: "Evitar el pago de multas por no contar con el sistema conforme a la ley y multas por no demostrar el retorno de las mercancías importadas temporalmente en facultades de comprobación de las autoridades aduaneras." 
+    },
+    { 
+        title: "Anexo 30", 
+        iconPath: ProcessAnexo30Icon,
+        description: "Evitar la suspensión de la certificación de IVA y el pago de dicho impuesto evitando impactos económicos importantes de flujo de efectivo debido a su pago por operación." 
+    },
+    { 
+        title: "Legal Estancia de Activos fijos", 
+        iconPath: LegalActivosFijosIcon,
+        description: "Evitar la duplicación de pago de impuestos, multas y embargo de mercancías al no poder demostrar la legal estancia en el país en facultades de comprobación de las autoridades aduaneras." 
+    },
+];
+
 const HomeSection = `
   <section id="inicio" class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
     
-    <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 z-0 bg-sky-900">
         <video 
             autoplay 
             loop 
             muted 
             playsinline 
-            poster="${WallpaperImage}" 
             class="w-full h-full object-cover transform-gpu"
         >
             <source src="${HeroVideo}" type="video/mp4">
@@ -59,12 +104,12 @@ const HomeSection = `
         
         <img src="${LogoWhite}" alt="ITARIFF Logo" class="w-64 h-auto mx-auto mb-6 drop-shadow-lg"/> 
         
-        <div class="h-10 mb-2 flex items-center justify-center">
+        <div class="h-12 mb-2 flex items-center justify-center">
             <h1 id="rotating-text" class="text-2xl md:text-3xl font-semibold drop-shadow-md opacity-0 transition-opacity duration-700 ease-out">
                 </h1>
         </div>
         
-        <div class="h-14 mb-8 flex items-center justify-center max-w-lg mx-auto">
+        <div class="h-20 mb-8 flex items-center justify-center max-w-lg mx-auto">
             <p id="rotating-description" class="text-base md:text-lg font-light drop-shadow-md opacity-0 transition-opacity duration-700 ease-out">
                 </p>
         </div>
@@ -304,23 +349,31 @@ const ModalTemplate = `
 
 // ---> CAMBIAR 'value="d9d4f178-431c-4d1b-8fc4-8be6cbc585f0"' POR CLAVE I TARIFF DE ACCESO DE WEB3FORMS <--- //
 const ContactoSection = `
-  <section id="contacto" class="min-h-screen py-20">
-    <div class="container mx-auto px-4">
-      <h2 class="text-5xl font-bold text-center text-gray-800 mb-12">CONTACTO</h2>
+  <!-- Hacemos la sección relativa para poder posicionar el fondo absoluto -->
+  <section id="contacto" class="min-h-screen py-20 relative overflow-hidden">
+    
+    <!-- Fondo de Imagen con Overlay -->
+    <div class="absolute inset-0 z-0 bg-cover bg-center" 
+         style="background-image: url(${BackgroundContactImage});">
+      <div class="absolute inset-0 bg-sky-900 opacity-80"></div> 
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <h2 class="text-5xl font-bold text-center text-white mb-12">CONTACTO</h2>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         
         <div>
-          <h3 class="text-3xl font-bold text-sky-900 mb-4">¡DÉJANOS UN MENSAJE!</h3>
+          <h3 class="text-3xl font-bold text-white mb-4">¡DÉJANOS UN MENSAJE!</h3> 
           <form 
             id="contacto-form" 
             action="https://api.web3forms.com/submit" 
             method="POST" 
-            class="space-y-4 shadow-lg p-6 rounded-lg border border-gray-100 scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out"
-
-
+            class="space-y-4 shadow-2xl p-6 rounded-lg bg-white/95 border border-gray-100 scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out"
+          >
             <input type="hidden" name="access_key" value="d9d4f178-431c-4d1b-8fc4-8be6cbc585f0"> 
             
+            <!-- Campos se mantienen igual, solo aseguramos que el fondo del formulario sea claro (bg-white/95) -->
             <input type="text" name="Nombre" placeholder="Nombre (requerido)" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-sky-500 focus:border-sky-500">
             <input type="email" name="Correo" placeholder="Correo (requerido)" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-sky-500 focus:border-sky-500">
             <input type="text" name="Asunto" placeholder="Asunto" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-sky-500 focus:border-sky-500">
@@ -334,9 +387,10 @@ const ContactoSection = `
         </div>
         
         <div>
-          <h3 class="text-3xl font-bold text-sky-900 mb-4">INFORMACIÓN Y UBICACIÓN</h3>
+          <h3 class="text-3xl font-bold text-white mb-4">INFORMACIÓN Y UBICACIÓN</h3>
           
-          <div class=" p-6 rounded-lg mb-6 shadow-md scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out>
+          <div class="bg-white/95 p-6 rounded-lg mb-6 shadow-md scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out">
+            <!-- CAMBIO: Texto y spans en tonos oscuros para el fondo claro -->
             <p class="text-gray-800 mb-2 font-semibold">
               <span class="text-sky-900">Teléfono:</span> (81) 8000-0332
             </p>
@@ -344,7 +398,6 @@ const ContactoSection = `
               <span class="text-sky-900">Dirección:</span> Av. Revolución No. exterior 2703-2, Interior piso 1 y 2. Col. Ladrillera, CP 64830 Monterrey Nuevo León
             </p>
           </div>
-
           <div class="h-80 rounded-lg shadow-xl overflow-hidden border-4 border-white scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out">
             <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1796.7906801905386!2d-100.27419842887618!3d25.64508499252445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86735a26a3c6130b%3A0xc3c54c33f7d2f447!2sAv.%20Revoluci%C3%B3n%202703%2C%20Ladrillera%2C%2064830%20Monterrey%2C%20N.L.!5e0!3m2!1sen!2smx!4v1669865679808!5m2!1sen!2smx" 
@@ -362,27 +415,109 @@ const ContactoSection = `
   </section>
 `;
 
+const CumplimientoMovilSection = () => {
+    return `
+        <div id="cumplimiento-cards" class="grid grid-cols-1 gap-6 md:hidden"> 
+            ${processSteps.map((step, index) => `
+                <div class="scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out bg-white p-6 rounded-lg shadow-lg border border-gray-200">
+                    <div class="flex items-start space-x-4 mb-3">
+                        <span class="w-10 h-10 flex items-center justify-center rounded-full bg-sky-900 text-white font-bold text-lg flex-shrink-0">${index + 1}</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-sky-900">${step.title}</h3>
+                            <p class="text-gray-600 text-sm">${step.description}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+    `;
+};
+
+const CumplimientoAduaneroSection = `
+  <section id="cumplimiento" class="min-h-screen py-12 bg-white flex items-start justify-center">
+    <div class="container mx-auto px-4 scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out">
+      
+      <h2 class="text-4xl font-bold text-center text-gray-800 mb-2">PROCESO DETALLADO DEL CUMPLIMIENTO ADUANERO.</h2>
+      <p class="text-xl text-gray-600 text-center mb-16">CONÓCELO PASO A PASO.</p>
+
+      <div class="hidden md:flex justify-center items-center w-full">
+
+        <div id="process-wheel" class="relative w-[380px] h-[380px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] mt-8"> 
+            
+            <!-- CLAVE: p-4 se cambia a p-8, y se elimina max-h-24 y overflow-y-auto -->
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[65%] h-[65%] flex flex-col items-center justify-center text-center bg-sky-50 p-8 rounded-full shadow-xl z-10 border-4 border-sky-200 transition-all duration-300 ease-out">
+                
+
+                <div class="mb-2">
+                  <!-- CLAVE: Aumentamos a w-16 h-16 -->
+                  <img id="process-step-icon" class="w-16 h-16 mx-auto object-cover" alt="Icono de Proceso">
+                </div>
+                
+                <span id="process-step-title" class="text-base md:text-lg font-bold text-sky-900 mb-1">
+                    Diagnóstico Inicial
+                </span>
+                
+                <p id="process-step-description" class="text-xs md:text-sm text-gray-600"> 
+                    Evaluamos su operación actual y sus sistemas de control para identificar áreas de incumplimiento potencial o riesgo de auditoría.
+                </p>
+            </div>
+
+            ${processSteps.map((step, index) => `
+                <button 
+                    class="process-indicator absolute w-20 h-20 rounded-full bg-sky-900 shadow-lg text-white font-bold text-xl flex items-center justify-center hover:bg-sky-700 transition-colors duration-300"
+                    data-step="${index}" 
+                    style="${getIndicatorPosition(index)}" 
+                    aria-label="${step.title}"
+                >
+                    ${index + 1}
+                </button>
+            `).join('')}
+        </div>
+
+      </div>
+      ${CumplimientoMovilSection()}
+    </div>
+  </section>
+`;
+
 const Navbar = () => `
   <header class="sticky top-0 z-50 bg-white shadow-lg">
     <nav class="container mx-auto p-7 flex justify-between items-center relative">
       
       <a href="#inicio" class="nav-link flex items-center py-1 hidden md:block absolute left-4 top-1/2 transform -translate-y-1/2">
-        <img src="${LogoBlue}" alt="ITARIFF Logo" class="h-19 w-auto">
+        <img src="${LogoBlue}" alt="ITARIFF Logo" class="h-12 w-auto">
       </a>
       
-      <div class="flex space-x-6 w-full justify-center md:w-auto md:ml-auto md:mr-4 md:relative">
+      <a href="#inicio" class="nav-link mobile-logo-link block md:hidden flex items-center">
+        <img src="${LogoBlue}" alt="ITARIFF Logo Móvil" class="h-15 w-auto"> 
+      </a>
+      <button id="menu-toggle" class="md:hidden p-2 text-sky-900 focus:outline-none ml-auto">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+      </button>
+
+      <div id="nav-links-desktop" class="hidden md:flex md:space-x-6 md:w-auto md:ml-auto md:mr-4">
         <a href="#inicio" class="nav-link text-gray-700 hover:text-sky-900 font-medium transition duration-150">INICIO</a>
         <a href="#empresa" class="nav-link text-gray-700 hover:text-sky-900 font-medium transition duration-150">EMPRESA</a>
         <a href="#servicios" class="nav-link text-gray-700 hover:text-sky-900 font-medium transition duration-150">SERVICIOS</a>
+        <a href="#cumplimiento" class="nav-link text-gray-700 hover:text-sky-900 font-medium transition duration-150">CUMPLIMIENTO</a>
         <a href="#contacto" class="nav-link text-gray-700 hover:text-sky-900 font-medium transition duration-150">CONTACTO</a>
       </div>
     </nav>
+
+    <!-- Dropdown del Menú Móvil -->
+    <div id="mobile-menu" class="md:hidden hidden absolute w-full bg-white shadow-lg border-t border-gray-100 z-40">
+        <a href="#inicio" class="nav-link block p-3 text-center text-sky-900 font-semibold border-b border-gray-100">INICIO</a>
+        <a href="#empresa" class="nav-link block p-3 text-center text-sky-900 font-semibold border-b border-gray-100">EMPRESA</a>
+        <a href="#servicios" class="nav-link block p-3 text-center text-sky-900 font-semibold border-b border-gray-100">SERVICIOS</a>
+        <a href="#cumplimiento" class="nav-link block p-3 text-center text-sky-900 font-semibold border-b border-gray-100">CUMPLIMIENTO</a>
+        <a href="#contacto" class="nav-link block p-3 text-center text-sky-900 font-semibold">CONTACTO</a>
+    </div>
   </header>
 `;
 
 const Footer = () => `
   <footer class="bg-gray-900 text-white p-6 text-center">
-    <p>© Copyright 2020  I Tarif</p>
+    <p>© Copyright 2025  I Tariff</p>
   </footer>
 `;
 
@@ -452,6 +587,29 @@ function initContactForm() {
         } finally {
             submitBtn.disabled = false;
         }
+    });
+}
+
+function initMobileMenu() {
+    const toggleButton = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = mobileMenu.querySelectorAll('.nav-link');
+
+    if (!toggleButton || !mobileMenu) return;
+
+    function toggleMenu() {
+        mobileMenu.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden'); 
+    }
+
+    toggleButton.addEventListener('click', toggleMenu);
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (!mobileMenu.classList.contains('hidden')) {
+                toggleMenu();
+            }
+        });
     });
 }
 
@@ -658,12 +816,12 @@ function getServiceData(id) {
       description: 'El Anexo 30 aplica a empresas certificadas IVA & IEPS. Gestionamos la supervisión y demostración del pago de IVA de importaciones temporales.',
       subServices: [
         {
-          icon: AuditoriasIcon,
+          icon: AdministracionIcon,
           name: 'ADMINISTRACIÓN DEL ANEXO 30 PARA EMPRESAS CERTIFICADAS IVA & IEPS',
           description: 'Se administra y supervisa la obligación de demostrar el pago del IVA de las importaciones temporales a través de sus retornos.'
         },
         {
-          icon: AsesoriaIcono, 
+          icon: AuditoriaIcon, 
           name: 'AUDITORÍA ESPECIFICA AL ANEXO 30 PARA EMPRESAS CERTIFICADAS IVA & IEPS',
           description: 'Se verifica que cumpla con las disposiciones legales y entrega de la información ante la autoridad para el cabal cumplimiento de la Certificación de IVA & IEPS, y así, evitar su cancelación o suspensión.'
         },
@@ -697,24 +855,14 @@ function getServiceData(id) {
   return serviceDataMap[id];
 }
 
+function getIndicatorPosition(index) {
+    const angle = (index / 7) * 2 * Math.PI - (Math.PI / 2); 
+    const radius = 50; 
 
-function initParallax() {
-    const parallaxElement = document.getElementById('parallax-bg');
-    
-    if (!parallaxElement) return;
+    const x = 50 + radius * Math.cos(angle);
+    const y = 50 + radius * Math.sin(angle);
 
-    const speed = parseFloat(parallaxElement.getAttribute('data-parallax')) || 0.3;
-
-    function applyParallax() {
-        const scrollPosition = window.scrollY; 
-        
-        const offsetY = scrollPosition * speed; 
-        
-        parallaxElement.style.transform = `translate3d(0, ${offsetY}px, 0)`;
-    }
-
-    window.addEventListener('scroll', applyParallax);
-    applyParallax();
+    return `left: ${x}%; top: ${y}%; transform: translate(-50%, -50%);`;
 }
 
 function initTextRotator() {
@@ -749,20 +897,6 @@ function initTextRotator() {
     // Iniciar y mantener la rotación
     rotateText();
     setInterval(rotateText, intervalTime);
-}
-
-function closeAllAccordions(allHeaders) {
-  allHeaders.forEach(h => {
-    const targetId = h.dataset.target;
-    const targetContent = document.getElementById(targetId);
-    const targetIcon = h.querySelector('svg');
-
-    if (h.getAttribute('aria-expanded') === 'true') {
-      targetContent.classList.add('hidden');
-      h.setAttribute('aria-expanded', 'false');
-      targetIcon.classList.remove('rotate-180');
-    }
-  });
 }
 
 function initScrollSpy() {
@@ -818,6 +952,79 @@ function initScrollSpy() {
     highlightNavLink(); 
 }
 
+let complianceWheelInterval;
+let currentComplianceStep = 0;
+
+function initComplianceWheel() {
+    if (typeof processSteps === 'undefined' || !processSteps.length) {
+        console.error("Error: processSteps no está definido o está vacío.");
+        return;
+    }
+
+    const indicators = document.querySelectorAll('.process-indicator');
+    const titleEl = document.getElementById('process-step-title');
+    const descriptionEl = document.getElementById('process-step-description');
+    const iconEl = document.getElementById('process-step-icon'); 
+    const centerContent = document.querySelector('#process-wheel > div'); 
+
+    if (!indicators.length) return;
+    
+    function autoAdvance() {
+        currentComplianceStep = (currentComplianceStep + 1) % processSteps.length;
+        updateContent(currentComplianceStep, false);
+    }
+    function startAutoAdvance() {
+        clearInterval(complianceWheelInterval); 
+        complianceWheelInterval = setInterval(autoAdvance, 5000); 
+    }
+
+    function stopAutoAdvance() {
+        clearInterval(complianceWheelInterval);
+        complianceWheelInterval = null; 
+    }
+
+    function updateContent(stepIndex, isUserInteraction = false) {
+        
+        if (isUserInteraction && complianceWheelInterval !== null) {
+            stopAutoAdvance();
+        }
+        
+        const data = processSteps[stepIndex];
+
+        centerContent.classList.add('opacity-0', 'translate-y-4'); 
+
+        setTimeout(() => {
+            titleEl.textContent = data.title;
+            descriptionEl.textContent = data.description;
+            
+            if (iconEl && data.iconPath) {
+                iconEl.src = data.iconPath; 
+            }
+
+            indicators.forEach(btn => btn.classList.remove('bg-sky-700', 'ring-4', 'ring-sky-200'));
+            
+            const currentBtn = document.querySelector(`.process-indicator[data-step="${stepIndex}"]`);
+            if (currentBtn) {
+                currentBtn.classList.add('bg-sky-700', 'ring-4', 'ring-sky-200');
+            }
+
+            centerContent.classList.remove('opacity-0', 'translate-y-4');
+        }, 300); 
+        
+        currentComplianceStep = stepIndex; 
+    }
+
+    indicators.forEach(indicator => {
+        indicator.addEventListener('click', () => {
+            const stepIndex = parseInt(indicator.dataset.step);
+            updateContent(stepIndex, true); 
+        });
+    });
+
+    updateContent(0, false)
+    startAutoAdvance();
+}
+
 const navbarHeight = 64;
 
 function renderSPV() {
@@ -830,6 +1037,7 @@ function renderSPV() {
       ${HomeSection}
       ${EmpresaSection}
       ${ServiciosSection}
+      ${CumplimientoAduaneroSection}
       ${ContactoSection}
     </main>
     ${Footer()}
@@ -838,10 +1046,11 @@ function renderSPV() {
   initHorizontalCarousel();
   initServiceModals();
   initScrollSpy();
-  initParallax();
   initScrollReveal();
   initTextRotator();
   initContactForm();
+  initComplianceWheel();
+  initMobileMenu();
 
   const initialTarget = document.getElementById('inicio');
   if (initialTarget) {
