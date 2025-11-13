@@ -32,14 +32,14 @@ const heroTexts = [
     },
     {
         title: 'PROPUESTA DE VALOR',
-        description: 'En I TARIFF estamos comprometidos a llevar las mejores prácticas del cumplimiento aduanero mexicano a tu empresa.'
+        description: 'En ITARIFF estamos comprometidos a llevar las mejores prácticas del cumplimiento aduanero mexicano a tu empresa.'
     },
     {
-        title: 'ADMINISTRACIÓN DE ANEXO 24.',
+        title: 'ADMINISTRACIÓN DE ANEXO 24',
         description: 'Se administra, audita y controla la obligación de demostrar los retornos de las mercancías importadas.'
     },
     {
-        title: 'ADMINISTRACIÓN DE ANEXO 30.',
+        title: 'ADMINISTRACIÓN DE ANEXO 30',
         description: 'Se administra y supervisa la obligación de demostrar el pago del IVA de las importaciones temporales a través de sus retornos.'
     },
 ];
@@ -209,7 +209,7 @@ const EmpresaSection = `
             </svg>
           </div>
           <h3 class="text-2xl font-semibold text-sky-900 mb-3">HISTORIA</h3>
-          <p class="text-gray-600 text-base">I TARIFF se origina a partir de la necesidad de la industria para realizar cabalmente el cumplimiento aduanero... y su fortaleza radica en la calidad y confianza en nuestros colaboradores expertos en la materia.</p>
+          <p class="text-gray-600 text-base">ITARIFF se origina a partir de la necesidad de la industria para realizar cabalmente el cumplimiento aduanero... y su fortaleza radica en la calidad y confianza en nuestros colaboradores expertos en la materia.</p>
         </div>
       </div>
     </div>
@@ -232,7 +232,7 @@ const PropuestaValorSection = `
       </h3>
 
       <p class="text-gray-700 mb-6 leading-relaxed text-base text-center">
-        En I TARIFF estamos comprometidos a llevar las mejores prácticas del cumplimiento aduanero mexicano a tu empresa. Contáctanos y nuestro equipo de expertos te apoyará en el proceso.
+        En ITARIFF estamos comprometidos a llevar las mejores prácticas del cumplimiento aduanero mexicano a tu empresa. Contáctanos y nuestro equipo de expertos te apoyará en el proceso.
       </p>
 
       <ul class="space-y-3 text-gray-700 text-base">
@@ -347,7 +347,7 @@ const ModalTemplate = `
 `;
 
 
-// ---> CAMBIAR 'value="d9d4f178-431c-4d1b-8fc4-8be6cbc585f0"' POR CLAVE I TARIFF DE ACCESO DE WEB3FORMS <--- //
+// ---> CAMBIAR 'value="d9d4f178-431c-4d1b-8fc4-8be6cbc585f0"' POR CLAVE ITARIFF DE ACCESO DE WEB3FORMS <--- //
 const ContactoSection = `
   <!-- Hacemos la sección relativa para poder posicionar el fondo absoluto -->
   <section id="contacto" class="min-h-screen py-20 relative overflow-hidden">
@@ -517,7 +517,7 @@ const Navbar = () => `
 
 const Footer = () => `
   <footer class="bg-gray-900 text-white p-6 text-center">
-    <p>© Copyright 2025  I Tariff</p>
+    <p>© Copyright 2025  ITariff</p>
   </footer>
 `;
 
