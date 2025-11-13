@@ -517,7 +517,7 @@ const Navbar = () => `
 
 const Footer = () => `
   <footer class="bg-gray-900 text-white p-6 text-center">
-    <p>© Copyright 2025  ITariff</p>
+    <p>© Copyright 2025  ITARIFF</p>
   </footer>
 `;
 
