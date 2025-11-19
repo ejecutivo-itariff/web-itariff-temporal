@@ -25,64 +25,92 @@ import LegalActivosFijosIcon from './assets/LegalActivosFijosIcon.png';
 
 import HeroVideo from './assets/HeroVideo.mp4';
 
-const heroTexts = [
-    {
-        title: 'COACHING',
-        description: 'Se obtiene el conocimiento para la gestión de su departamento de comercio exterior.'
-    },
-    {
-        title: 'PROPUESTA DE VALOR',
-        description: 'En ITARIFF estamos comprometidos a llevar las mejores prácticas del cumplimiento aduanero mexicano a tu empresa.'
-    },
-    {
-        title: 'ADMINISTRACIÓN DE ANEXO 24',
-        description: 'Se administra, audita y controla la obligación de demostrar los retornos de las mercancías importadas.'
-    },
-    {
-        title: 'ADMINISTRACIÓN DE ANEXO 30',
-        description: 'Se administra y supervisa la obligación de demostrar el pago del IVA de las importaciones temporales a través de sus retornos.'
-    },
-];
+import esContent from './lang/es.json';
+import enContent from './lang/en.json';
 
-const processSteps = [
-    { 
-        title: "Autorizaciones", 
-        iconPath: AutorizacionesIcon,
-        description: "Evitar la suspensión del padrón de importadores, de los beneficios de los programas IMMEX, PROSEC, Regla 8va, de los Tratados de Libre Comercio, la Certificación de IVA & IEPS y de Empresa Confiable (OEA)." 
-    },
-    { 
-        title: "Impuestos Aduaneros", 
-        iconPath: ImpuestosAduanerosIcon,
-        description: "Evitar el pago indebido por no conocer la aplicación total de las preferencias arancelarías de los Tratados de Libre Comercio, PROSEC y Regla 8va en las mercancías de importación." 
-    },
-    { 
-        title: "Expedientes de Pedimentos", 
-        iconPath: ExpedientesPedimentosIcon,
-        description: "Evitar el pago de multas por no contar con los documentos necesarios para demostrar la Importación, Exportación, Cambio de Régimen, Regularización, Transferencia, Destrucción o Donación de las mercancías en facultades de comprobación de las Autoridades fiscales u aduaneras." 
-    },
-    { 
-        title: "Validación de Saldos", 
-        iconPath: ValidacionSaldosIcon,
-        description: "Revisamos y validamos los saldos y reportes generados por su sistema contra la base de datos de la autoridad (SAT/AGA)." 
-    },
-    { 
-        title: "Control de inventarios Anexo 24", 
-        iconPath: ControlInventariosAnexo24Icon,
-        description: "Evitar el pago de multas por no contar con el sistema conforme a la ley y multas por no demostrar el retorno de las mercancías importadas temporalmente en facultades de comprobación de las autoridades aduaneras." 
-    },
-    { 
-        title: "Anexo 30", 
-        iconPath: ProcessAnexo30Icon,
-        description: "Evitar la suspensión de la certificación de IVA y el pago de dicho impuesto evitando impactos económicos importantes de flujo de efectivo debido a su pago por operación." 
-    },
-    { 
-        title: "Legal Estancia de Activos fijos", 
-        iconPath: LegalActivosFijosIcon,
-        description: "Evitar la duplicación de pago de impuestos, multas y embargo de mercancías al no poder demostrar la legal estancia en el país en facultades de comprobación de las autoridades aduaneras." 
-    },
-];
+let currentLang = 'es'; 
+const allContent = {
+    es: esContent,
+    en: enContent
+};
 
-const HomeSection = `
+const t = (keyPath) => {
+    const content = allContent[currentLang] || allContent['es'];
+    const keys = keyPath.split('.');
+    let value = content;
+
+    for (const key of keys) {
+        if (value && value[key]) {
+            value = value[key];
+        } else {
+            return `[MISSING KEY: ${keyPath}]`;
+        }
+    }
+    return value;
+};
+
+function getHeroTexts() {
+  return [
+    {
+      title: t('hero_rotator.0.title'),
+      description: t('hero_rotator.0.description')
+    },
+    {
+      title: t('hero_rotator.1.title'),
+      description: t('hero_rotator.1.description')
+    },
+    {
+      title: t('hero_rotator.2.title'),
+      description: t('hero_rotator.2.description')
+    },
+    {
+      title: t('hero_rotator.3.title'),
+      description: t('hero_rotator.3.description')
+    },
+  ];
+}
+
+function getProcessSteps() {
+  return [
+    { 
+      title: t('cumplimiento.paso_1_title'),
+      iconPath: AutorizacionesIcon,
+      description: t('cumplimiento.paso_1_desc'),
+    },
+    { 
+      title: t('cumplimiento.paso_2_title'),
+      iconPath: ImpuestosAduanerosIcon,
+      description: t('cumplimiento.paso_2_desc'),
+    },
+    { 
+      title: t('cumplimiento.paso_3_title'),
+      iconPath: ExpedientesPedimentosIcon,
+      description: t('cumplimiento.paso_3_desc'),
+    },
+    { 
+      title: t('cumplimiento.paso_4_title'),
+      iconPath: ValidacionSaldosIcon,
+      description: t('cumplimiento.paso_4_desc'),
+    },
+    { 
+      title: t('cumplimiento.paso_5_title'),
+      iconPath: ControlInventariosAnexo24Icon,
+      description: t('cumplimiento.paso_5_desc'),
+    },
+    { 
+      title: t('cumplimiento.paso_6_title'),
+      iconPath: ProcessAnexo30Icon,
+      description: t('cumplimiento.paso_6_desc'),
+    },
+    { 
+      title: t('cumplimiento.paso_7_title'),
+      iconPath: LegalActivosFijosIcon,
+      description: t('cumplimiento.paso_7_desc'),
+    },
+  ];
+}
+
+const HomeSection = () => `
   <section id="inicio" class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
     
     <div class="absolute inset-0 z-0 bg-sky-900">
@@ -91,10 +119,8 @@ const HomeSection = `
             loop 
             muted 
             playsinline 
-            class="w-full h-full object-cover transform-gpu"
-        >
+            class="w-full h-full object-cover transform-gpu">
             <source src="${HeroVideo}" type="video/mp4">
-            Tu navegador no soporta el video de fondo.
         </video>
         
         <div class="absolute inset-0 bg-black opacity-30"></div> 
@@ -115,7 +141,7 @@ const HomeSection = `
         </div>
         
         <a href="#servicios" class="nav-link bg-white text-sky-900 font-bold py-3 px-8 rounded-lg shadow-xl transition duration-300 inline-block">
-            Ver Nuestros Servicios
+            ${t('hero.cta')}
         </a>
 
     </div>
@@ -132,11 +158,11 @@ const HomeSection = `
   </section>
 `;
 
-const ClientesSection = `
+const ClientesSection = () => `
   <section id="clientes" class="py-20 bg-white">
     <div class="container mx-auto px-4 text-center scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out">
       <h2 class="text-4xl font-extrabold text-gray-800 mb-4">
-        NUESTROS CLIENTES
+        ${t('empresa.clientes_title')}
       </h2>
       <p class="text-gray-600 mb-12">
         
@@ -146,12 +172,12 @@ const ClientesSection = `
         <div id="horizontal-carousel-wrapper" class="relative">
             <div id="horizontal-carousel" class="flex transition-transform duration-500 ease-in-out">
                 
-                ${createClientItem('BoltIcon', 'INDUSTRIA ELÉCTRICA')}
-                ${createClientItem('TruckIcon', 'INDUSTRIA DE AUTO PARTES AUTOMOTRICES')}
-                ${createClientItem('CogIcon', 'INDUSTRIA DEL ACERO')}
-                ${createClientItem('HomeIcon', 'COMERCIALIZACIÓN PARA INDUSTRIA Y VIVIENDA')}
-                ${createClientItem('ScissorsIcon', 'INDUSTRIA TEXTIL')}
-                ${createClientItem('ToolIcon', 'COMERCIALIZACIÓN DE MAQUINARIA Y HERRAMENTAL')}
+                ${createClientItem('BoltIcon', t('empresa.clientes_card_1') )}
+                ${createClientItem('TruckIcon', t('empresa.clientes_card_2') )}
+                ${createClientItem('CogIcon', t('empresa.clientes_card_3') )}
+                ${createClientItem('HomeIcon', t('empresa.clientes_card_4' ))}
+                ${createClientItem('ScissorsIcon', t('empresa.clientes_card_5'))}
+                ${createClientItem('ToolIcon', t('empresa.clientes_card_6'))}
                 
             </div>
         </div>
@@ -167,11 +193,11 @@ const ClientesSection = `
   </section>
 `;
 
-const EmpresaSection = `
+const EmpresaSection = () => `
   <section id="empresa" class="min-h-screen bg-white py-20 border-b border-gray-200">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-5xl font-bold text-gray-800 mb-4">
-        QUIENES SOMOS
+        ${t('empresa.title')}
       </h2>
       <p class="text-gray-600 mb-12">
         
@@ -187,8 +213,8 @@ const EmpresaSection = `
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.25 15l-1.05 1.05a2.25 2.25 0 01-3.18 0l-1.05-1.05m5.28 5.76a.75.75 0 001.06 0l1.05-1.05a2.25 2.25 0 000-3.18L10.5 5.25a2.25 2.25 0 00-3.18 0l-1.05 1.05m5.28 5.76m2.25 2.25a.75.75 0 00-1.06 0L10.5 17.25a2.25 2.25 0 01-3.18 0l-1.05-1.05m5.28 5.76" />
             </svg>
           </div>
-          <h3 class="text-2xl font-semibold text-sky-900 mb-3">MISIÓN</h3>
-          <p class="text-gray-600 text-base">Apoyar el crecimiento de nuestros clientes mediante asesoramiento de negocios prestado a través de nuestros servicios.</p>
+          <h3 class="text-2xl font-semibold text-sky-900 mb-3">${t('empresa.mision_title')}</h3>
+          <p class="text-gray-600 text-base">${t('empresa.p_mision')}</p>
         </div>
         
         <div class="p-6 shadow-xl rounded-lg  hover:shadow-2xl scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out border border-gray-200">
@@ -198,8 +224,8 @@ const EmpresaSection = `
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
             </svg>
           </div>
-          <h3 class="text-2xl font-semibold text-sky-900 mb-3">VISIÓN</h3>
-          <p class="text-gray-600 text-base">Ser una empresa mexicana que construya confianza en la sociedad a través de nuestros colaboradores, logrando así un crecimiento constante a la par de nuestros clientes.</p>
+          <h3 class="text-2xl font-semibold text-sky-900 mb-3">${t('empresa.vision_title')}</h3>
+          <p class="text-gray-600 text-base">${t('empresa.p_vision')}</p>
         </div>
         
         <div class="p-6 shadow-xl rounded-lg  hover:shadow-2xl scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out border border-gray-200">
@@ -208,18 +234,18 @@ const EmpresaSection = `
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6h4.5M12 21a9 9 0 100-18 9 9 0 000 18Z" />
             </svg>
           </div>
-          <h3 class="text-2xl font-semibold text-sky-900 mb-3">HISTORIA</h3>
-          <p class="text-gray-600 text-base">ITARIFF se origina a partir de la necesidad de la industria para realizar cabalmente el cumplimiento aduanero... y su fortaleza radica en la calidad y confianza en nuestros colaboradores expertos en la materia.</p>
+          <h3 class="text-2xl font-semibold text-sky-900 mb-3">${t('empresa.historia_title')}</h3>
+          <p class="text-gray-600 text-base">${t('empresa.p_historia')}</p>
         </div>
       </div>
     </div>
     
-    ${ClientesSection}
+    ${ClientesSection()}
   </section>
 `;
 
 
-const PropuestaValorSection = `
+const PropuestaValorSection = () => `
   <div class="flex justify-center items-start lg:h-full lg:py-12">
     <div class="scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out bg-white p-8 rounded-xl shadow-2xl max-w-md w-full border border-gray-200"> 
       
@@ -228,61 +254,61 @@ const PropuestaValorSection = `
       </div>
       
       <h3 class="text-3xl font-bold text-sky-900 mb-6 text-center pb-2">
-        PROPUESTAS DE VALOR
+        ${t('servicios.propuesta_valor_title')}
       </h3>
 
       <p class="text-gray-700 mb-6 leading-relaxed text-base text-center">
-        En ITARIFF estamos comprometidos a llevar las mejores prácticas del cumplimiento aduanero mexicano a tu empresa. Contáctanos y nuestro equipo de expertos te apoyará en el proceso.
+        ${t('servicios.propuesta_valor_text')}
       </p>
 
       <ul class="space-y-3 text-gray-700 text-base">
         <li class="flex items-start">
             <span class="font-bold text-sky-900 mr-2 flex-shrink-0">1.</span>
-            <p>Orientación hacia el <span class="font-bold text-sky-900">CLIENTE</span>, donde nuestros expertos sean preferidos y tengan la confianza de nuestros clientes.</p>
+            <p>${t('servicios.valor_cliente')}</p>
         </li>
         <li class="flex items-start">
             <span class="font-bold text-sky-900 mr-2 flex-shrink-0">2.</span>
-            <p><span class="font-bold text-sky-900">ADAPTACIÓN</span> a los requerimientos del gobierno mexicano.</p>
+            <p>${t('servicios.valor_adaptacion')}</p>
         </li>
         <li class="flex items-start">
             <span class="font-bold text-sky-900 mr-2 flex-shrink-0">3.</span>
-            <p>Desarrollo de <span class="font-bold text-sky-900">MEJORAS</span> en el cumplimiento aduanero.</p>
+            <p>${t('servicios.valor_mejoras')}</p>
         </li>
         <li class="flex items-start">
             <span class="font-bold text-sky-900 mr-2 flex-shrink-0">4.</span>
-            <p><span class="font-bold text-sky-900">SINERGIAS</span> con asociaciones para obtener el mejor acercamiento ante las autoridades.</p>
+            <p>${t('servicios.valor_sinergias')}</p>
         </li>
         <li class="flex items-start">
             <span class="font-bold text-sky-900 mr-2 flex-shrink-0">5.</span>
-            <p>Generamos su <span class="font-bold text-sky-900">TRANQUILIDAD</span>, al administrar y controlar sus obligaciones aduaneras.</p>
+            <p>${t('servicios.valor_tranquilidad')}</p>
         </li>
       </ul>
     </div>
   </div>
 `;
 
-const ServiciosGrid = `
+const ServiciosGrid = () => `
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 h-full py-12 w-full mx-auto">
     
     <div class="scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out service-card cursor-pointer p-6 shadow-xl rounded-lg bg-white hover:shadow-2xl border border-gray-200 text-center flex flex-col justify-between items-center" data-service-id="anexo24">
         <div>
             <img src="${Anexo24Icon}" alt="Anexo 24" class="w-16 h-16 object-cover mx-auto mb-4"/>
-            <h3 class="text-xl font-bold text-sky-900 mb-2">ANEXO 24</h3>
-            <p class="text-gray-600 text-base mb-4">Control de inventarios y registro de mercancías importadas temporalmente.</p>
+            <h3 class="text-xl font-bold text-sky-900 mb-2">${t('servicios.anexo24_title')}</h3>
+            <p class="text-gray-600 text-base mb-4">${t('servicios.anexo24_desc')}</p>
         </div>
         <div class="mt-auto text-base font-semibold text-sky-700 flex items-center hover:text-sky-900">
-            Ver Detalles
+            ${t('servicios.details_cta')}
         </div>
     </div>
 
     <div class="scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out service-card cursor-pointer p-6 shadow-xl rounded-lg bg-white hover:shadow-2xl border border-gray-200 text-center flex flex-col justify-between items-center" data-service-id="anexo30">
         <div>
             <img src="${Anexo30Icon}" alt="Anexo 30" class="w-16 h-16 object-cover mx-auto mb-4"/>
-            <h3 class="text-xl font-bold text-sky-900 mb-2">ANEXO 30</h3>
-            <p class="text-gray-600 text-base mb-4">Administración y control de obligaciones para empresas certificadas IVA & IEPS.</p> 
+            <h3 class="text-xl font-bold text-sky-900 mb-2">${t('servicios.anexo30_title')}</h3>
+            <p class="text-gray-600 text-base mb-4">${t('servicios.anexo30_desc')}</p> 
         </div>
         <div class="mt-auto text-base font-semibold text-sky-700 flex items-center hover:text-sky-900">
-            Ver Detalles
+            ${t('servicios.details_cta')}
         </div>
     </div>
     
@@ -290,11 +316,11 @@ const ServiciosGrid = `
         <div class="scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out service-card cursor-pointer p-6 shadow-xl rounded-lg bg-white hover:shadow-2xl border border-gray-200 text-center flex flex-col justify-between items-center" data-service-id="cumplimiento"> 
             <div>
                 <img src="${CumplimientoIcon}" alt="Gestión Integral" class="w-16 h-16 object-cover rounded-full mx-auto mb-4"/>
-                <h3 class="text-xl font-bold text-sky-900 mb-2">CUMPLIMIENTO</h3>
-                <p class="text-gray-600 text-base mb-4">Auditorías, capacitación, coaching y trámites ante la autoridad aduanera.</p>
+                <h3 class="text-xl font-bold text-sky-900 mb-2">${t('servicios.cumplimiento_title')}</h3>
+                <p class="text-gray-600 text-base mb-4">${t('servicios.cumplimiento_desc')}</p>
             </div>
             <div class="mt-auto text-base font-semibold text-sky-700 flex items-center hover:text-sky-900">
-                Ver Detalles
+                ${t('servicios.details_cta')}
             </div>
         </div>
     </div>
@@ -302,7 +328,7 @@ const ServiciosGrid = `
   </div>
 `;
 
-const ServiciosSection = `
+const ServiciosSection = () => `
   <section id="servicios" class="min-h-screen relative py-12 border-b border-gray-200 flex items-center overflow-hidden">
     
     <div class="absolute inset-0 z-0 bg-cover bg-center" 
@@ -310,16 +336,16 @@ const ServiciosSection = `
       <div class="absolute inset-0 bg-sky-900 opacity-80"></div> 
     </div>
 
-    <div class="container mx-auto px-4 relative z-10"> <h2 class="text-4xl font-extrabold text-center text-white mb-8">NUESTROS SERVICIOS</h2> 
+    <div class="container mx-auto px-4 relative z-10"> <h2 class="text-4xl font-extrabold text-center text-white mb-8">${t('servicios.title')}</h2> 
       
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         
         <div class="flex justify-center">
-          ${PropuestaValorSection}
+          ${PropuestaValorSection()}
         </div>
         
         <div class="lg:pl-4 flex items-center">
-            ${ServiciosGrid}
+            ${ServiciosGrid()}
         </div>
         
       </div>
@@ -327,7 +353,7 @@ const ServiciosSection = `
   </section>
 `;
 
-const ModalTemplate = `
+const ModalTemplate = () => `
     <div 
         id="service-modal" 
         class="fixed inset-0 flex items-center justify-center z-[100] hidden" 
@@ -348,7 +374,7 @@ const ModalTemplate = `
 
 
 // ---> CAMBIAR 'value="d9d4f178-431c-4d1b-8fc4-8be6cbc585f0"' POR CLAVE ITARIFF DE ACCESO DE WEB3FORMS <--- //
-const ContactoSection = `
+const ContactoSection = () => `
   <!-- Hacemos la sección relativa para poder posicionar el fondo absoluto -->
   <section id="contacto" class="min-h-screen py-20 relative overflow-hidden">
     
@@ -359,12 +385,12 @@ const ContactoSection = `
     </div>
 
     <div class="container mx-auto px-4 relative z-10">
-      <h2 class="text-5xl font-bold text-center text-white mb-12">CONTACTO</h2>
+      <h2 class="text-5xl font-bold text-center text-white mb-12">${t('contacto.title')}</h2>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         
         <div>
-          <h3 class="text-3xl font-bold text-white mb-4">¡DÉJANOS UN MENSAJE!</h3> 
+          <h3 class="text-3xl font-bold text-white mb-4">${t('contacto.form_title')}</h3> 
           <form 
             id="contacto-form" 
             action="https://api.web3forms.com/submit" 
@@ -374,28 +400,28 @@ const ContactoSection = `
             <input type="hidden" name="access_key" value="d9d4f178-431c-4d1b-8fc4-8be6cbc585f0"> 
             
             <!-- Campos se mantienen igual, solo aseguramos que el fondo del formulario sea claro (bg-white/95) -->
-            <input type="text" name="Nombre" placeholder="Nombre (requerido)" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-sky-500 focus:border-sky-500">
-            <input type="email" name="Correo" placeholder="Correo (requerido)" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-sky-500 focus:border-sky-500">
-            <input type="text" name="Asunto" placeholder="Asunto" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-sky-500 focus:border-sky-500">
-            <textarea name="Mensaje" placeholder="Mensaje" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-sky-500 focus:border-sky-500"></textarea>
+            <input type="text" name="Nombre" placeholder="${t('contacto.name_placeholder')}" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-sky-500 focus:border-sky-500">
+            <input type="email" name="Correo" placeholder="${t('contacto.email_placeholder')}" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-sky-500 focus:border-sky-500">
+            <input type="text" name="Asunto" placeholder="${t('contacto.subject_placeholder')}" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-sky-500 focus:border-sky-500">
+            <textarea name="Mensaje" placeholder="${t('contacto.message_placeholder')}" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-sky-500 focus:border-sky-500"></textarea>
             
             <button type="submit" id="submit-btn" class="bg-sky-900 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-gray-800 transition duration-300">
-              ENVIAR
+              ${t('contacto.send_button')}
             </button>
             <p id="form-status" class="text-center font-semibold mt-4 hidden"></p>
           </form>
         </div>
         
         <div>
-          <h3 class="text-3xl font-bold text-white mb-4">INFORMACIÓN Y UBICACIÓN</h3>
+          <h3 class="text-3xl font-bold text-white mb-4">${t('contacto.info_title')}</h3>
           
           <div class="bg-white/95 p-6 rounded-lg mb-6 shadow-md scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out">
             <!-- CAMBIO: Texto y spans en tonos oscuros para el fondo claro -->
             <p class="text-gray-800 mb-2 font-semibold">
-              <span class="text-sky-900">Teléfono:</span> (81) 8000-0332
+              <span class="text-sky-900">${t('contacto.phone')}</span> (81) 8000-0332
             </p>
             <p class="text-gray-800 font-semibold">
-              <span class="text-sky-900">Dirección:</span> Av. Revolución No. exterior 2703-2, Interior piso 1 y 2. Col. Ladrillera, CP 64830 Monterrey Nuevo León
+              <span class="text-sky-900">${t('contacto.address')}</span> Av. Revolución No. exterior 2703-2, Interior piso 1 y 2. Col. Ladrillera, CP 64830 Monterrey Nuevo León
             </p>
           </div>
           <div class="h-80 rounded-lg shadow-xl overflow-hidden border-4 border-white scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out">
@@ -418,7 +444,7 @@ const ContactoSection = `
 const CumplimientoMovilSection = () => {
     return `
         <div id="cumplimiento-cards" class="grid grid-cols-1 gap-6 md:hidden"> 
-            ${processSteps.map((step, index) => `
+                  ${getProcessSteps().map((step, index) => `
                 <div class="scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out bg-white p-6 rounded-lg shadow-lg border border-gray-200">
                     <div class="flex items-start space-x-4 mb-3">
                         <span class="w-10 h-10 flex items-center justify-center rounded-full bg-sky-900 text-white font-bold text-lg flex-shrink-0">${index + 1}</span>
@@ -433,12 +459,12 @@ const CumplimientoMovilSection = () => {
     `;
 };
 
-const CumplimientoAduaneroSection = `
+const CumplimientoAduaneroSection = () => `
   <section id="cumplimiento" class="min-h-screen py-12 bg-white flex items-start justify-center">
     <div class="container mx-auto px-4 scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out">
       
-      <h2 class="text-4xl font-bold text-center text-gray-800 mb-2">PROCESO DETALLADO DEL CUMPLIMIENTO ADUANERO.</h2>
-      <p class="text-xl text-gray-600 text-center mb-16">CONÓCELO PASO A PASO.</p>
+      <h2 class="text-4xl font-bold text-center text-gray-800 mb-2">${t('cumplimiento.main_title')}</h2>
+      <p class="text-xl text-gray-600 text-center mb-16">${t('cumplimiento.subtitle')}</p>
 
       <div class="hidden md:flex justify-center items-center w-full">
 
@@ -449,7 +475,6 @@ const CumplimientoAduaneroSection = `
                 
 
                 <div class="mb-2">
-                  <!-- CLAVE: Aumentamos a w-16 h-16 -->
                   <img id="process-step-icon" class="w-16 h-16 mx-auto object-cover" alt="Icono de Proceso">
                 </div>
                 
@@ -462,7 +487,7 @@ const CumplimientoAduaneroSection = `
                 </p>
             </div>
 
-            ${processSteps.map((step, index) => `
+            ${getProcessSteps().map((step, index) => `
                 <button 
                     class="process-indicator absolute w-20 h-20 rounded-full bg-sky-900 shadow-lg text-white font-bold text-xl flex items-center justify-center hover:bg-sky-700 transition-colors duration-300"
                     data-step="${index}" 
@@ -480,40 +505,58 @@ const CumplimientoAduaneroSection = `
   </section>
 `;
 
-const Navbar = () => `
-  <header class="sticky top-0 z-50 bg-white shadow-lg">
-    <nav class="container mx-auto p-7 flex justify-between items-center relative">
-      
-      <a href="#inicio" class="nav-link flex items-center py-1 hidden md:block absolute left-4 top-1/2 transform -translate-y-1/2">
-        <img src="${LogoBlue}" alt="ITARIFF Logo" class="h-12 w-auto">
-      </a>
-      
-      <a href="#inicio" class="nav-link mobile-logo-link block md:hidden flex items-center">
-        <img src="${LogoBlue}" alt="ITARIFF Logo Móvil" class="h-15 w-auto"> 
-      </a>
-      <button id="menu-toggle" class="md:hidden p-2 text-sky-900 focus:outline-none ml-auto">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-      </button>
+const Navbar = () => {
+    const navContent = allContent[currentLang].nav;
+    return `
+      <header class="sticky top-0 z-50 bg-white shadow-lg">
+        <nav class="container mx-auto p-4 flex justify-between items-center relative">
+          
+          <!-- Logo Escritorio -->
+          <a href="#inicio" class="nav-link flex items-center py-1 hidden md:block absolute left-4 top-1/2 transform -translate-y-1/2">
+            <img src="${LogoBlue}" alt="ITARIFF Logo" class="h-12 w-auto">
+          </a>
+          
+          <!-- Logo Móvil -->
+          <a href="#inicio" class="nav-link mobile-logo-link block md:hidden flex items-center">
+            <img src="${LogoBlue}" alt="ITARIFF Logo Móvil" class="h-8 w-auto"> 
+          </a>
+          
+          <!-- Botón de Hamburguesa -->
+          <button id="menu-toggle" class="md:hidden p-2 text-sky-900 focus:outline-none ml-auto">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+          </button>
 
-      <div id="nav-links-desktop" class="hidden md:flex md:space-x-6 md:w-auto md:ml-auto md:mr-4">
-        <a href="#inicio" class="nav-link text-gray-700 hover:text-sky-900 font-medium transition duration-150">INICIO</a>
-        <a href="#empresa" class="nav-link text-gray-700 hover:text-sky-900 font-medium transition duration-150">EMPRESA</a>
-        <a href="#servicios" class="nav-link text-gray-700 hover:text-sky-900 font-medium transition duration-150">SERVICIOS</a>
-        <a href="#cumplimiento" class="nav-link text-gray-700 hover:text-sky-900 font-medium transition duration-150">CUMPLIMIENTO</a>
-        <a href="#contacto" class="nav-link text-gray-700 hover:text-sky-900 font-medium transition duration-150">CONTACTO</a>
-      </div>
-    </nav>
+          <!-- Menú Desktop -->
+          <div id="nav-links-desktop" class="hidden md:flex md:space-x-6 md:w-auto md:ml-auto md:mr-4 items-center">
+            <a href="#inicio" class="nav-link text-gray-700 hover:text-sky-900 font-medium transition duration-150">${navContent.inicio}</a>
+            <a href="#empresa" class="nav-link text-gray-700 hover:text-sky-900 font-medium transition duration-150">${navContent.empresa}</a>
+            <a href="#servicios" class="nav-link text-gray-700 hover:text-sky-900 font-medium transition duration-150">${navContent.servicios}</a>
+            <a href="#cumplimiento" class="nav-link text-gray-700 hover:text-sky-900 font-medium transition duration-150">${navContent.cumplimiento}</a>
+            <a href="#contacto" class="nav-link text-gray-700 hover:text-sky-900 font-medium transition duration-150">${navContent.contacto}</a>
 
-    <!-- Dropdown del Menú Móvil -->
-    <div id="mobile-menu" class="md:hidden hidden absolute w-full bg-white shadow-lg border-t border-gray-100 z-40">
-        <a href="#inicio" class="nav-link block p-3 text-center text-sky-900 font-semibold border-b border-gray-100">INICIO</a>
-        <a href="#empresa" class="nav-link block p-3 text-center text-sky-900 font-semibold border-b border-gray-100">EMPRESA</a>
-        <a href="#servicios" class="nav-link block p-3 text-center text-sky-900 font-semibold border-b border-gray-100">SERVICIOS</a>
-        <a href="#cumplimiento" class="nav-link block p-3 text-center text-sky-900 font-semibold border-b border-gray-100">CUMPLIMIENTO</a>
-        <a href="#contacto" class="nav-link block p-3 text-center text-sky-900 font-semibold">CONTACTO</a>
-    </div>
-  </header>
-`;
+            <!-- Botón de Idioma (ESCRITORIO) - AGREGAMOS ID -->
+            <button id="lang-toggle" class="ml-4 p-2 rounded-full bg-gray-100 hover:bg-sky-100 text-sky-900 font-bold text-sm">
+                ${allContent[currentLang].lang_switch}
+            </button>
+          </div>
+        </nav>
+
+        <!-- Dropdown del Menú Móvil -->
+        <div id="mobile-menu" class="md:hidden hidden absolute w-full bg-white shadow-lg border-t border-gray-100 z-40">
+            <a href="#inicio" class="nav-link block p-3 text-center text-sky-900 font-semibold border-b border-gray-100">${navContent.inicio}</a>
+            <a href="#empresa" class="nav-link block p-3 text-center text-sky-900 font-semibold border-b border-gray-100">${navContent.empresa}</a>
+            <a href="#servicios" class="nav-link block p-3 text-center text-sky-900 font-semibold border-b border-gray-100">${navContent.servicios}</a>
+            <a href="#cumplimiento" class="nav-link block p-3 text-center text-sky-900 font-semibold border-b border-gray-100">${navContent.cumplimiento}</a>
+            <a href="#contacto" class="nav-link block p-3 text-center text-sky-900 font-semibold">CONTACTO</a>
+            
+            <!-- Botón de Idioma (MÓVIL) - AGREGAMOS ID -->
+            <button id="lang-toggle-mobile" class="w-full p-3 text-center bg-sky-50 text-sky-900 font-bold border-t border-gray-100">
+                ${allContent[currentLang].lang_switch}
+            </button>
+        </div>
+      </header>
+    `;
+};
 
 const Footer = () => `
   <footer class="bg-gray-900 text-white p-6 text-center">
@@ -555,7 +598,7 @@ function initContactForm() {
         const data = new FormData(form);
         
         status.classList.remove('hidden');
-        status.textContent = 'Enviando...';
+        status.textContent = t('contacto.status_sending');
         status.classList.remove('text-green-600', 'text-red-600');
         status.classList.add('text-sky-900');
         submitBtn.disabled = true;
@@ -569,12 +612,12 @@ function initContactForm() {
             const result = await response.json();
 
             if (response.ok && result.success) {
-                status.textContent = '¡Mensaje enviado con éxito! Recibirás una respuesta pronto.';
+                status.textContent = t('contacto.status_success');
                 status.classList.remove('text-sky-900', 'text-red-600');
                 status.classList.add('text-green-600');
                 form.reset(); // Limpiar formulario
             } else {
-                status.textContent = result.message || 'Error al enviar el mensaje.';
+                status.textContent = result.message || t('contacto.status_error');;
                 status.classList.remove('text-sky-900', 'text-green-600');
                 status.classList.add('text-red-600');
             }
@@ -588,6 +631,23 @@ function initContactForm() {
             submitBtn.disabled = false;
         }
     });
+}
+
+function changeLanguage() {
+    currentLang = (currentLang === 'es') ? 'en' : 'es';
+    const scrollPosition = window.scrollY;
+    renderSPV(); 
+    
+    window.scrollTo(0, scrollPosition);
+    setupLangToggleListeners(); 
+}
+
+function setupLangToggleListeners() {
+    const desktopBtn = document.getElementById('lang-toggle');
+    const mobileBtn = document.getElementById('lang-toggle-mobile');
+    
+    if (desktopBtn) desktopBtn.addEventListener('click', changeLanguage);
+    if (mobileBtn) mobileBtn.addEventListener('click', changeLanguage);
 }
 
 function initMobileMenu() {
@@ -794,59 +854,59 @@ function initServiceModals() {
 function getServiceData(id) {
   const serviceDataMap = {
     'anexo24': {
-      title: 'ANEXO 24',
+      title: t('servicios.modal_title_anexo24'),
       image: Anexo24Icon,
-      description: 'El Anexo 24 es crucial para el cumplimiento de obligaciones de comercio exterior. Aseguramos el adecuado registro y control de saldos.',
+      description: t('servicios.modal_desc_anexo24'),
       subServices: [
         {
           icon: AdministracionIcon,
-          name: 'ADMINISTRACIÓN DE ANEXO 24',
-          description: 'Se administra, audita y controla la obligación de demostrar los retornos de las mercancías importadas temporalmente a través de herramientas que cumplen con los requisitos ante la autoridad para fines de comercio exterior.'
+          name: t('servicios.sub_admin24_title'),
+          description: t('servicios.sub_admin24_desc')
         },
         {
           icon: AuditoriaIcon,
-          name: 'AUDITORÍA ESPECIFICA AL ANEXO 24',
-          description: 'Se verifica que cumpla con las disposiciones legales y técnicas adecuadas para la correcta captura de la información de los catálogos base, la información productiva, la información aduanera y su descarga.'
+          name: t('servicios.sub_audit24_title'),
+          description: t('servicios.sub_audit24_desc')
         },
       ],
     },
     'anexo30': {
-      title: 'ANEXO 30',
+      title: t('servicios.modal_title_anexo30'),
       image: Anexo30Icon,
-      description: 'El Anexo 30 aplica a empresas certificadas IVA & IEPS. Gestionamos la supervisión y demostración del pago de IVA de importaciones temporales.',
+      description: t('servicios.modal_desc_anexo30'),
       subServices: [
         {
           icon: AdministracionIcon,
-          name: 'ADMINISTRACIÓN DEL ANEXO 30 PARA EMPRESAS CERTIFICADAS IVA & IEPS',
-          description: 'Se administra y supervisa la obligación de demostrar el pago del IVA de las importaciones temporales a través de sus retornos.'
+          name: t('servicios.sub_admin30_title'),
+          description: t('servicios.sub_admin30_desc')
         },
         {
           icon: AuditoriaIcon, 
-          name: 'AUDITORÍA ESPECIFICA AL ANEXO 30 PARA EMPRESAS CERTIFICADAS IVA & IEPS',
-          description: 'Se verifica que cumpla con las disposiciones legales y entrega de la información ante la autoridad para el cabal cumplimiento de la Certificación de IVA & IEPS, y así, evitar su cancelación o suspensión.'
+          name: t('servicios.sub_audit30_title'),
+          description: t('servicios.sub_audit30_desc')
         },
       ],
       details: null
     },
     'cumplimiento': {
-      title: 'CUMPLIMIENTO',
+      title: t('servicios.modal_title_cumplimiento'),
       image: CumplimientoIcon,
-      description: 'Ofrecemos un paquete completo de servicios para asegurar la operación aduanera. Incluye auditorías y capacitación.',
+      description: t('servicios.modal_desc_cumplimiento'),
       subServices: [
         {
           icon: AuditoriasIcon,
-          name: 'AUDITORÍAS PREVENTIVAS DE COMERCIO EXTERIOR',
-          description: 'Análisis profundo de sus operaciones, clasificación arancelaria y expedientes de comercio exterior para mitigar riesgos.'
+          name: t('servicios.sub_audit_prevention_title'),
+          description: t('servicios.sub_audit_prevention_desc')
         },
         {
           icon: CapacitacionIcono, 
-          name: 'CAPACITACIÓN ESPECIALIZADA',
-          description: 'Cursos y talleres a la medida para formar a su equipo en temas críticos de la legislación aduanera mexicana.'
+          name: t('servicios.sub_capacitacion_title'),
+          description: t('servicios.sub_capacitacion_desc')
         },
         {
           icon: CoachingIcono,
-          name: 'COACHING Y GESTIÓN DE TRÁMITES',
-          description: 'Soporte directo para la resolución de requerimientos y la gestión de trámites (padrones, certificaciones, etc.) ante el SAT/AGA.'
+          name: t('servicios.sub_coaching_title'),
+          description: t('servicios.sub_coaching_desc')
         },
       ],
       details: null
@@ -871,8 +931,9 @@ function initTextRotator() {
     
     if (!titleElement || !descElement) return;
 
-    let currentIndex = 0;
-    const intervalTime = 4000; // 4 segundos
+  const heroTexts = getHeroTexts();
+  let currentIndex = 0;
+  const intervalTime = 4000; // 4 segundos
 
     function rotateText() {
         const currentData = heroTexts[currentIndex];
@@ -956,73 +1017,74 @@ let complianceWheelInterval;
 let currentComplianceStep = 0;
 
 function initComplianceWheel() {
-    if (typeof processSteps === 'undefined' || !processSteps.length) {
-        console.error("Error: processSteps no está definido o está vacío.");
-        return;
-    }
+  const steps = getProcessSteps();
+  if (!steps || !steps.length) {
+    console.error("Error: processSteps no está definido o está vacío.");
+    return;
+  }
 
-    const indicators = document.querySelectorAll('.process-indicator');
-    const titleEl = document.getElementById('process-step-title');
-    const descriptionEl = document.getElementById('process-step-description');
-    const iconEl = document.getElementById('process-step-icon'); 
-    const centerContent = document.querySelector('#process-wheel > div'); 
+  const indicators = document.querySelectorAll('.process-indicator');
+  const titleEl = document.getElementById('process-step-title');
+  const descriptionEl = document.getElementById('process-step-description');
+  const iconEl = document.getElementById('process-step-icon'); 
+  const centerContent = document.querySelector('#process-wheel > div'); 
 
-    if (!indicators.length) return;
+  if (!indicators.length) return;
     
-    function autoAdvance() {
-        currentComplianceStep = (currentComplianceStep + 1) % processSteps.length;
-        updateContent(currentComplianceStep, false);
-    }
-    function startAutoAdvance() {
-        clearInterval(complianceWheelInterval); 
-        complianceWheelInterval = setInterval(autoAdvance, 5000); 
-    }
+  function autoAdvance() {
+    currentComplianceStep = (currentComplianceStep + 1) % steps.length;
+    updateContent(currentComplianceStep, false);
+  }
+  function startAutoAdvance() {
+    clearInterval(complianceWheelInterval); 
+    complianceWheelInterval = setInterval(autoAdvance, 5000); 
+  }
 
-    function stopAutoAdvance() {
-        clearInterval(complianceWheelInterval);
-        complianceWheelInterval = null; 
-    }
+  function stopAutoAdvance() {
+    clearInterval(complianceWheelInterval);
+    complianceWheelInterval = null; 
+  }
 
-    function updateContent(stepIndex, isUserInteraction = false) {
+  function updateContent(stepIndex, isUserInteraction = false) {
         
-        if (isUserInteraction && complianceWheelInterval !== null) {
-            stopAutoAdvance();
-        }
+    if (isUserInteraction && complianceWheelInterval !== null) {
+      stopAutoAdvance();
+    }
         
-        const data = processSteps[stepIndex];
+    const data = steps[stepIndex];
 
-        centerContent.classList.add('opacity-0', 'translate-y-4'); 
+    centerContent.classList.add('opacity-0', 'translate-y-4'); 
 
-        setTimeout(() => {
-            titleEl.textContent = data.title;
-            descriptionEl.textContent = data.description;
+    setTimeout(() => {
+      titleEl.textContent = data.title;
+      descriptionEl.textContent = data.description;
             
-            if (iconEl && data.iconPath) {
-                iconEl.src = data.iconPath; 
-            }
+      if (iconEl && data.iconPath) {
+        iconEl.src = data.iconPath; 
+      }
 
-            indicators.forEach(btn => btn.classList.remove('bg-sky-700', 'ring-4', 'ring-sky-200'));
+      indicators.forEach(btn => btn.classList.remove('bg-sky-700', 'ring-4', 'ring-sky-200'));
             
-            const currentBtn = document.querySelector(`.process-indicator[data-step="${stepIndex}"]`);
-            if (currentBtn) {
-                currentBtn.classList.add('bg-sky-700', 'ring-4', 'ring-sky-200');
-            }
+      const currentBtn = document.querySelector(`.process-indicator[data-step="${stepIndex}"]`);
+      if (currentBtn) {
+        currentBtn.classList.add('bg-sky-700', 'ring-4', 'ring-sky-200');
+      }
 
-            centerContent.classList.remove('opacity-0', 'translate-y-4');
-        }, 300); 
+      centerContent.classList.remove('opacity-0', 'translate-y-4');
+    }, 300); 
         
-        currentComplianceStep = stepIndex; 
-    }
+    currentComplianceStep = stepIndex; 
+  }
 
-    indicators.forEach(indicator => {
-        indicator.addEventListener('click', () => {
-            const stepIndex = parseInt(indicator.dataset.step);
-            updateContent(stepIndex, true); 
-        });
+  indicators.forEach(indicator => {
+    indicator.addEventListener('click', () => {
+      const stepIndex = parseInt(indicator.dataset.step);
+      updateContent(stepIndex, true); 
     });
+  });
 
-    updateContent(0, false)
-    startAutoAdvance();
+  updateContent(0, false)
+  startAutoAdvance();
 }
 
 const navbarHeight = 64;
@@ -1034,15 +1096,19 @@ function renderSPV() {
   appContainer.innerHTML = `
     ${Navbar()}
     <main>
-      ${HomeSection}
-      ${EmpresaSection}
-      ${ServiciosSection}
-      ${CumplimientoAduaneroSection}
-      ${ContactoSection}
+      ${HomeSection()}
+      ${EmpresaSection()}
+      ${ServiciosSection()}
+      ${CumplimientoAduaneroSection()}
+      ${ContactoSection()}
     </main>
     ${Footer()}
-    ${ModalTemplate}  `;
-  
+    ${ModalTemplate()}  `;
+  try {
+    document.body.style.overflow = '';
+    document.body.classList.remove('overflow-hidden');
+  } catch (e) {
+  }
   initHorizontalCarousel();
   initServiceModals();
   initScrollSpy();
@@ -1051,6 +1117,7 @@ function renderSPV() {
   initContactForm();
   initComplianceWheel();
   initMobileMenu();
+  setupLangToggleListeners();
 
   const initialTarget = document.getElementById('inicio');
   if (initialTarget) {

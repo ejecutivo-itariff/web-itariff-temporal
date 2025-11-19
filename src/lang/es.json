@@ -1,0 +1,121 @@
+{
+  "lang_switch": "EN",
+  "nav": {
+    "inicio": "INICIO",
+    "empresa": "EMPRESA",
+    "servicios": "SERVICIOS",
+    "cumplimiento": "CUMPLIMIENTO",
+    "contacto": "CONTACTO"
+  },
+  "hero": {
+    "cta": "Ver Nuestros Servicios"
+  },
+  "hero_rotator": [
+    {
+      "title": "COACHING",
+      "description": "Se obtiene el conocimiento para la gestión de su departamento de comercio exterior."
+    },
+    {
+      "title": "PROPUESTA DE VALOR",
+      "description": "En ITARIFF estamos comprometidos a llevar las mejores prácticas del cumplimiento aduanero mexicano a tu empresa."
+    },
+    {
+      "title": "ADMINISTRACIÓN DE ANEXO 24",
+      "description": "Se administra, audita y controla la obligación de demostrar los retornos de las mercancías importadas."
+    },
+    {
+      "title": "ADMINISTRACIÓN DE ANEXO 30",
+      "description": "Se administra y supervisa la obligación de demostrar el pago del IVA de las importaciones temporales a través de sus retornos."
+    }
+  ],
+  "empresa": {
+    "title": "QUIENES SOMOS",
+    "mision_title": "MISIÓN",
+    "p_mision": "Apoyar el crecimiento de nuestros clientes mediante asesoramiento de negocios prestado a través de nuestros servicios.",
+    "vision_title": "VISIÓN",
+    "p_vision": "Ser una empresa mexicana que construya confianza en la sociedad a través de nuestros colaboradores, logrando así un crecimiento constante a la par de nuestros clientes.",
+    "historia_title": "HISTORIA",
+    "p_historia": "ITARIFF se origina a partir de la necesidad de la industria para realizar cabalmente el cumplimiento aduanero... y su fortaleza radica en la calidad y confianza en nuestros colaboradores expertos en la materia.",
+
+    "clientes_title": "NUESTROS CLIENTES",
+    "clientes_card_1": "INDUSTRIA ELÉCTRICA",
+    "clientes_card_2": "INDUSTRIA DE AUTO PARTES AUTOMOTRICES",
+    "clientes_card_3": "INDUSTRIA DEL ACERO",
+    "clientes_card_4": "COMERCIALIZACIÓN PARA INDUSTRIA Y VIVIENDA",
+    "clientes_card_5": "INDUSTRIA TEXTIL",
+    "clientes_card_6": "COMERCIALIZACIÓN DE MAQUINARIA Y HERRAMENTAL"
+  },
+  "servicios": {
+    "title": "NUESTROS SERVICIOS",
+    "details_cta": "Ver Detalles",
+    "propuesta_valor_title": "PROPUESTAS DE VALOR",
+    "propuesta_valor_text": "En ITARIFF estamos comprometidos a llevar las mejores prácticas del cumplimiento aduanero mexicano a tu empresa. Contáctanos y nuestro equipo de expertos te apoyará en el proceso.",
+    "valor_cliente": "Orientación hacia el CLIENTE, donde nuestros expertos sean preferidos y tengan la confianza de nuestros clientes.",
+    "valor_adaptacion": "ADAPTACIÓN a los requerimientos del gobierno mexicano.",
+    "valor_mejoras": "Desarrollo de MEJORAS en el cumplimiento aduanero.",
+    "valor_sinergias": "SINERGIAS con asociaciones para obtener el mejor acercamiento ante las autoridades.",
+    "valor_tranquilidad": "Generamos su TRANQUILIDAD, al administrar y controlar sus obligaciones aduaneras.",
+    
+    "anexo24_title": "ANEXO 24",
+    "anexo30_title": "ANEXO 30",
+    "cumplimiento_title": "CUMPLIMIENTO",
+    "anexo24_desc": "Control de inventarios y registro de mercancías importadas temporalmente.",
+    "anexo30_desc": "Administración y control de obligaciones para empresas certificadas IVA & IEPS.",
+    "cumplimiento_desc": "Auditorías, capacitación, coaching y trámites ante la autoridad aduanera.",
+    
+    "modal_title_anexo24": "ANEXO 24",
+    "modal_title_anexo30": "ANEXO 30",
+    "modal_title_cumplimiento": "CUMPLIMIENTO",
+    "modal_desc_anexo24": "El Anexo 24 es crucial para el cumplimiento de obligaciones de comercio exterior. Aseguramos el adecuado registro y control de saldos.",
+    "modal_desc_anexo30": "El Anexo 30 aplica a empresas certificadas IVA & IEPS. Gestionamos la supervisión y demostración del pago de IVA de importaciones temporales.",
+    "modal_desc_cumplimiento": "Ofrecemos un paquete completo de servicios para asegurar la operación aduanera. Incluye auditorías y capacitación.",
+    
+    "sub_admin24_title": "ADMINISTRACIÓN DE ANEXO 24",
+    "sub_admin24_desc": "Se administra, audita y controla la obligación de demostrar los retornos de las mercancías importadas temporalmente a través de herramientas que cumplen con los requisitos ante la autoridad para fines de comercio exterior.",
+    "sub_audit24_title": "AUDITORÍA ESPECIFICA AL ANEXO 24",
+    "sub_audit24_desc": "Se verifica que cumpla con las disposiciones legales y técnicas adecuadas para la correcta captura de la información de los catálogos base, la información productiva, la información aduanera y su descarga.",
+    "sub_admin30_title": "ADMINISTRACIÓN DEL ANEXO 30 PARA EMPRESAS CERTIFICADAS IVA & IEPS",
+    "sub_admin30_desc": "Se administra y supervisa la obligación de demostrar el pago del IVA de las importaciones temporales a través de sus retornos.",
+    "sub_audit30_title": "AUDITORÍA ESPECIFICA AL ANEXO 30 PARA EMPRESAS CERTIFICADAS IVA & IEPS",
+    "sub_audit30_desc": "Se verifica que cumpla con las disposiciones legales y entrega de la información ante la autoridad para el cabal cumplimiento de la Certificación de IVA & IEPS, y así, evitar su cancelación o suspensión.",
+    "sub_audit_prevention_title": "AUDITORÍAS PREVENTIVAS DE COMERCIO EXTERIOR",
+    "sub_audit_prevention_desc": "Análisis profundo de sus operaciones, clasificación arancelaria y expedientes de comercio exterior para mitigar riesgos.",
+    "sub_capacitacion_title": "CAPACITACIÓN ESPECIALIZADA",
+    "sub_capacitacion_desc": "Cursos y talleres a la medida para formar a su equipo en temas críticos de la legislación aduanera mexicana.",
+    "sub_coaching_title": "COACHING Y GESTIÓN DE TRÁMITES",
+    "sub_coaching_desc": "Soporte directo para la resolución de requerimientos y la gestión de trámites (padrones, certificaciones, etc.) ante el SAT/AGA."
+  },
+  "cumplimiento": {
+    "main_title": "PROCESO DETALLADO DEL CUMPLIMIENTO ADUANERO",
+    "subtitle": "CONÓCELO PASO A PASO",
+    "paso_1_title": "Autorizaciones",
+    "paso_1_desc": "Evitar la suspensión del padrón de importadores, de los beneficios de los programas IMMEX, PROSEC, Regla 8va, de los Tratados de Libre Comercio, la Certificación de IVA & IEPS y de Empresa Confiable (OEA).",
+    "paso_2_title": "Impuestos Aduaneros",
+    "paso_2_desc": "Evitar el pago indebido por no conocer la aplicación total de las preferencias arancelarías de los Tratados de Libre Comercio, PROSEC y Regla 8va en las mercancías de importación.",
+    "paso_3_title": "Expedientes de Pedimentos",
+    "paso_3_desc": "Evitar el pago de multas por no contar con los documentos necesarios para demostrar la Importación, Exportación, Cambio de Régimen, Regularización, Transferencia, Destrucción o Donación de las mercancías en facultades de comprobación de las Autoridades fiscales u aduaneras.",
+    "paso_4_title": "Validación de Saldos",
+    "paso_4_desc": "Revisamos y validamos los saldos y reportes generados por su sistema contra la base de datos de la autoridad (SAT/AGA).",
+    "paso_5_title": "Control de inventarios Anexo 24",
+    "paso_5_desc": "Evitar el pago de multas por no contar con el sistema conforme a la ley y multas por no demostrar el retorno de las mercancías importadas temporalmente en facultades de comprobación de las autoridades aduaneras.",
+    "paso_6_title": "Anexo 30",
+    "paso_6_desc": "Evitar la suspensión de la certificación de IVA y el pago de dicho impuesto evitando impactos económicos importantes de flujo de efectivo debido a su pago por operación.",
+    "paso_7_title": "Legal Estancia de Activos fijos",
+    "paso_7_desc": "Evitar la duplicación de pago de impuestos, multas y embargo de mercancías al no poder demostrar la legal estancia en el país en facultades de comprobación de las autoridades aduaneras."
+  },
+  "contacto": {
+    "title": "CONTACTO",
+    "form_title": "¡DÉJANOS UN MENSAJE!",
+    "name_placeholder": "Nombre (requerido)",
+    "email_placeholder": "Correo (requerido)",
+    "subject_placeholder": "Asunto",
+    "message_placeholder": "Mensaje",
+    "send_button": "ENVIAR",
+    "status_sending": "Enviando...",
+    "status_success": "¡Mensaje enviado con éxito! Recibirás una respuesta pronto.",
+    "status_error": "Error al enviar el mensaje.",
+    "info_title": "INFORMACIÓN Y UBICACIÓN",
+    "phone": "Teléfono",
+    "address": "Dirección"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "lang_switch": "ES",
+  "nav": {
+    "inicio": "HOME",
+    "empresa": "COMPANY",
+    "servicios": "SERVICES",
+    "cumplimiento": "COMPLIANCE",
+    "contacto": "CONTACT"
+  },
+  "hero": {
+    "cta": "View Our Services"
+  },
+  "hero_rotator": [
+    {
+      "title": "COACHING",
+      "description": "Gain the knowledge to manage your foreign trade department."
+    },
+    {
+      "title": "VALUE PROPOSITION",
+      "description": "At ITARIFF we are committed to bringing the best practices of Mexican customs compliance to your company."
+    },
+    {
+      "title": "ANNEX 24 ADMINISTRATION",
+      "description": "The obligation to demonstrate the return of imported goods is administered, audited, and controlled."
+    },
+    {
+      "title": "ANNEX 30 ADMINISTRATION",
+      "description": "The obligation to demonstrate payment of VAT on temporary imports through their returns is administered and monitored."
+    }
+  ],
+  "empresa": {
+    "title": "WHO WE ARE",
+    "mision_title": "MISSION",
+    "p_mision": "To support the growth of our clients through business advice provided through our services.",
+    "vision_title": "VISION",
+    "p_vision": "To be a Mexican company that builds trust in society through our employees, thus achieving constant growth alongside our customers.",
+    "historia_title": "HISTORY",
+    "p_historia": "ITARIFF originated from the industry's need to fully comply with customs regulations... and its strength lies in the quality and trust in our expert collaborators in the field.",
+
+    "clientes_title": "OUR CLIENTS",
+    "clientes_card_1": "ELECTRICAL INDUSTRY",
+    "clientes_card_2": "AUTOMOTIVE PARTS INDUSTRY",
+    "clientes_card_3": "STEEL INDUSTRY",
+    "clientes_card_4": "MARKETING FOR INDUSTRY AND HOUSING",
+    "clientes_card_5": "TEXTILE INDUSTRY",
+    "clientes_card_6": "MARKETING OF MACHINERY AND TOOLS"
+  },
+  "servicios": {
+    "title": "OUR SERVICES",
+    "details_cta": "View Details",
+    "propuesta_valor_title": "VALUE PROPOSITION",
+    "propuesta_valor_text": "At ITARIFF, we are committed to bringing the best practices in Mexican customs compliance to your company. Contact us and our team of experts will support you throughout the process.",
+    "valor_cliente": "Customer-oriented, where our experts are preferred and trusted by our clients.",
+    "valor_adaptacion": "ADAPTATION to the requirements of the Mexican government.",
+    "valor_mejoras": "Development of IMPROVEMENTS in customs compliance.",
+    "valor_sinergias": "SYNERGIES with associations to achieve the best approach to the authorities.",
+    "valor_tranquilidad": "We generate your PEACE OF MIND by managing and controlling your customs obligations.",
+    
+    "anexo24_title": "ANNEX 24",
+    "anexo30_title": "ANNEX 30",
+    "cumplimiento_title": "COMPLIANCE",
+    "anexo24_desc": "Inventory control and registration of temporarily imported goods.",
+    "anexo30_desc": "Administration and control of obligations for companies certified in VAT & IEPS.",
+    "cumplimiento_desc": "Audits, training, coaching and procedures before the customs authority.",
+    
+    "modal_title_anexo24": "ANNEX 24",
+    "modal_title_anexo30": "ANNEX 30",
+    "modal_title_cumplimiento": "COMPLIANCE",
+    "modal_desc_anexo24": "Annex 24 is crucial for compliance with foreign trade obligations. We ensure the proper registration and control of balances.",
+    "modal_desc_anexo30": "Annex 30 applies to VAT & IEPS certified companies. We manage the monitoring and proof of VAT payments for temporary imports.",
+    "modal_desc_cumplimiento": "We offer a comprehensive service package to ensure smooth customs operations. This includes audits and training.",
+    
+    "sub_admin24_title": "ANNEX 24 ADMINISTRATION",
+    "sub_admin24_desc": "The obligation to demonstrate the return of temporarily imported goods is administered, audited and controlled through tools that comply with the requirements before the authority for foreign trade purposes.",
+    "sub_audit24_title": "SPECIFIC AUDIT OF ANNEX 24",
+    "sub_audit24_desc": "Verification that it complies with the appropriate legal and technical provisions for the correct capture of information from base catalogs, production information, customs information, and its download.",
+    "sub_admin30_title": "ADMINISTRATION OF ANNEX 30 FOR VAT & IEPS CERTIFIED COMPANIES",
+    "sub_admin30_desc": "The obligation to demonstrate payment of VAT on temporary imports through their returns is administered and monitored.",
+    "sub_audit30_title": "SPECIFIC AUDIT OF ANNEX 30 FOR VAT & IEPS CERTIFIED COMPANIES",
+    "sub_audit30_desc": "Verification that it complies with legal provisions and submission of information to the authorities for full compliance with VAT & IEPS certification, thereby avoiding its cancellation or suspension.",
+    "sub_audit_prevention_title": "PREVENTIVE AUDITS OF FOREIGN TRADE",
+    "sub_audit_prevention_desc": "In-depth analysis of your operations, tariff classification and foreign trade records to mitigate risks.",
+    "sub_capacitacion_title": "SPECIALIZED TRAINING",
+    "sub_capacitacion_desc": "Tailor-made courses and workshops to train your team on critical issues of Mexican customs legislation.",
+    "sub_coaching_title": "COACHING AND PROCEDURE MANAGEMENT",
+    "sub_coaching_desc": "Direct support for resolving requirements and managing procedures (registries, certifications, etc.) before the SAT/AGA."
+  },
+  "cumplimiento": {
+    "main_title": "DETAILED PROCESS OF CUSTOMS COMPLIANCE",
+    "subtitle": "GET TO KNOW IT STEP BY STEP",
+    "paso_1_title": "Authorizations",
+    "paso_1_desc": "Avoid suspension of the importers registry, the benefits of the IMMEX, PROSEC, Rule 8 programs, the Free Trade Agreements, the VAT & IEPS Certification and the Trusted Company (AEO).",
+    "paso_2_title": "Customs Duties",
+    "paso_2_desc": "Avoid overpayment due to lack of knowledge regarding the full application of tariff preferences under Free Trade Agreements, PROSEC, and Rule 8 on imported goods.",
+    "paso_3_title": "Customs Declaration Files",
+    "paso_3_desc": "Avoid paying fines for not having the necessary documents to prove the Import, Export, Change of Regime, Regularization, Transfer, Destruction or Donation of goods during verification by the tax or customs authorities.",
+    "paso_4_title": "Balance Validation",
+    "paso_4_desc": "We review and validate the balances and reports generated by your system against the authority's database (SAT/AGA).",
+    "paso_5_title": "Annex 24 Inventory Control",
+    "paso_5_desc": "Avoid paying fines for not having the system in accordance with the law and fines for not demonstrating the return of temporarily imported goods during verification powers of the customs authorities.",
+    "paso_6_title": "Annex 30",
+    "paso_6_desc": "Avoid the suspension of VAT certification and the payment of said tax, thus avoiding significant economic impacts on cash flow due to its payment per operation.",
+    "paso_7_title": "Legal Status of Fixed Assets",
+    "paso_7_desc": "Avoiding duplicate tax payments, fines, and seizure of goods due to the inability to prove legal stay in the country during verification procedures by customs authorities."
+  },
+  "contacto": {
+    "title": "CONTACT US",
+    "form_title": "LEAVE US A MESSAGE!",
+    "name_placeholder": "Name (required)",
+    "email_placeholder": "Email (required)",
+    "subject_placeholder": "Subject",
+    "message_placeholder": "Message",
+    "send_button": "SEND",
+    "status_sending": "Sending...",
+    "status_success": "Message sent successfully! You will receive a response soon.",
+    "status_error": "There was an error sending the message.",
+    "info_title": "INFORMATION AND LOCATION",
+    "phone": "Telephone",
+    "address": "Adress"
+  }
+}
