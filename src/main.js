@@ -372,7 +372,7 @@ const ModalTemplate = () => `
     </div>
 `;
 
-
+/*
 // ---> CAMBIAR 'value="d9d4f178-431c-4d1b-8fc4-8be6cbc585f0"' POR CLAVE ITARIFF DE ACCESO DE WEB3FORMS <--- //
 const ContactoSection = () => `
   <!-- Hacemos la sección relativa para poder posicionar el fondo absoluto -->
@@ -434,6 +434,57 @@ const ContactoSection = () => `
                 loading="lazy" 
                 referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+`; */
+
+const ContactoSection = () => `
+  <section id="contacto" class="min-h-screen py-20 relative overflow-hidden">
+    <div class="absolute inset-0 z-0 bg-cover bg-center" 
+         style="background-image: url(${BackgroundContactImage});">
+      <div class="absolute inset-0 bg-sky-900 opacity-80"></div> 
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <h2 class="text-5xl font-bold text-center text-white mb-12">${t('contacto.title')}</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        
+        <!-- LEFT: HubSpot form -->
+        <div>
+          <h3 class="text-3xl font-bold text-white mb-4">${t('contacto.form_title')}</h3> 
+          
+          <div id="hubspot-form-wrapper"
+               class="space-y-4 shadow-2xl p-6 rounded-lg bg-white/95 border border-gray-100 scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out">
+            <!-- HubSpot will inject the form into this div -->
+            <div
+              class="hs-form-frame"
+              data-region="na1"
+              data-form-id="16f81165-00bd-4aea-a4b0-a6a33133581e"
+              data-portal-id="50747875">
+            </div>
+          </div>
+        </div>
+        
+        <!-- RIGHT: info box & map (unchanged) -->
+        <div>
+          <h3 class="text-3xl font-bold text-white mb-4">${t('contacto.info_title')}</h3>
+          
+          <div class="bg-white/95 p-6 rounded-lg mb-6 shadow-md scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out">
+            <p class="text-gray-800 mb-2 font-semibold">
+              <span class="text-sky-900">${t('contacto.phone')}</span> (81) 8000-0332
+            </p>
+            <p class="text-gray-800 font-semibold">
+              <span class="text-sky-900">${t('contacto.address')}</span> Av. Revolución No. exterior 2703-2, Interior piso 1 y 2. Col. Ladrillera, CP 64830 Monterrey Nuevo León
+            </p>
+          </div>
+          
+          <div class="h-80 rounded-lg shadow-xl overflow-hidden border-4 border-white scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out">
+            <!-- your iframe map -->
+            ...
           </div>
         </div>
       </div>
@@ -631,6 +682,26 @@ function initContactForm() {
             submitBtn.disabled = false;
         }
     });
+}
+
+function initHubspotForm() {
+  // Script not loaded yet? Bail out.
+  if (!window.hbspt || !window.hbspt.forms) return;
+
+  const frame = document.querySelector('.hs-form-frame');
+  if (!frame) return;
+
+  // Avoid double-initialization if HubSpot has already rendered a form here
+  if (frame.dataset.hsInitialized === 'true') return;
+
+  frame.dataset.hsInitialized = 'true';
+
+  window.hbspt.forms.create({
+    region: frame.dataset.region || 'na1',
+    portalId: frame.dataset.portalId,
+    formId: frame.dataset.formId,
+    target: '.hs-form-frame'
+  });
 }
 
 function changeLanguage() {
@@ -1114,10 +1185,12 @@ function renderSPV() {
   initScrollSpy();
   initScrollReveal();
   initTextRotator();
-  initContactForm();
+  //initContactForm();
   initComplianceWheel();
   initMobileMenu();
   setupLangToggleListeners();
+  // *** Aquí inicializas HubSpot ***
+  initHubspotForm();
 
   const initialTarget = document.getElementById('inicio');
   if (initialTarget) {
