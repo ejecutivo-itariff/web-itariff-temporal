@@ -483,8 +483,15 @@ const ContactoSection = () => `
           </div>
           
           <div class="h-80 rounded-lg shadow-xl overflow-hidden border-4 border-white scroll-reveal opacity-0 translate-y-12 transition-all duration-700 ease-out">
-            <!-- your iframe map -->
-            ...
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1796.7906801905386!2d-100.27419842887618!3d25.64508499252445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86735a26a3c6130b%3A0xc3c54c33f7d2f447!2sAv.%20Revoluci%C3%B3n%202703%2C%20Ladrillera%2C%2064830%20Monterrey%2C%20N.L.!5e0!3m2!1sen!2smx!4v1669865679808!5m2!1sen!2smx" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>
